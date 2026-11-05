@@ -1,0 +1,3549 @@
+<!DOCTYPE html><html lang="vi" class="light"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Ôn Tập Kỹ Năng Làm Việc Nhóm (Full 250 Câu)</title>    <!-- Tailwind CSS -->    <script src="https://cdn.tailwindcss.com"></script>    <script>        tailwind.config = {            darkMode: 'class',            theme: {                extend: {                    colors: {                        primary: '#4f46e5',                    }                }            }        }    </script>    <!-- Font Awesome Icons & Confetti -->    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>    <style>        @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap');        body { font-family: 'Lexend', sans-serif; transition: background-color 0.3s, color 0.3s; }        .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }        .dark .custom-scrollbar::-webkit-scrollbar-thumb { background: #475569; }        .option-btn { transition: all 0.15s ease-in-out; }        .option-btn:hover:not(:disabled) { transform: translateY(-1px); }    </style></head><body class="bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col selection:bg-indigo-500 selection:text-white">
+    <!-- HEADER / NAVIGATION -->    <header class="sticky top-0 z-40 bg-white/90 dark:bg-slate-800/90 backdrop-blur border-b border-slate-200 dark:border-slate-700 shadow-sm">        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">            <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('dashboard')">                <div class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold text-xl shadow-lg shadow-indigo-500/30">                    <i class="fa-solid fa-book-open"></i>                </div>                <div>                    <h1 class="font-bold text-lg leading-tight text-slate-900 dark:text-white">Kỹ Năng Làm Việc Nhóm </h1>                    <p class="text-xs text-indigo-600 dark:text-indigo-400 font-medium">Ngân hàng Full 250 câu ôn tập</p>                </div>            </div>
+            <!-- Navigation Links -->            <nav class="hidden md:flex items-center gap-1 bg-slate-100 dark:bg-slate-700/50 p-1 rounded-xl">                <button id="nav-dashboard" onclick="switchTab('dashboard')" class="px-4 py-2 rounded-lg text-sm font-semibold transition bg-white dark:bg-slate-800 shadow-sm text-indigo-600 dark:text-indigo-400">                    <i class="fa-solid fa-map-location-dot mr-1.5"></i> Bản đồ chặng                </button>                <button id="nav-exam" onclick="switchTab('exam-setup')" class="px-4 py-2 rounded-lg text-sm font-semibold transition text-slate-600 dark:text-slate-300 hover:text-indigo-600">                    <i class="fa-solid fa-clock-rotate-left mr-1.5"></i> Thi thử                </button>                <button id="nav-search" onclick="switchTab('search')" class="px-4 py-2 rounded-lg text-sm font-semibold transition text-slate-600 dark:text-slate-300 hover:text-indigo-600">                    <i class="fa-solid fa-magnifying-glass mr-1.5"></i> Tra cứu & Ôn tập                </button>            </nav>
+            <!-- Utility Buttons -->            <div class="flex items-center gap-2">                <button onclick="toggleDarkMode()" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-amber-400 hover:bg-slate-100 dark:hover:bg-slate-700 transition flex items-center justify-center">                    <i id="theme-icon" class="fa-solid fa-moon"></i>                </button>                <button onclick="confirmResetData()" title="Xóa lịch sử làm bài" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/30 transition flex items-center justify-center">                    <i class="fa-solid fa-rotate-right"></i>                </button>            </div>        </div>
+        <!-- Mobile Bottom Navigation -->        <div class="md:hidden flex border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">            <button onclick="switchTab('dashboard')" id="m-nav-dashboard" class="flex-1 py-2.5 text-center text-xs font-semibold text-indigo-600 dark:text-indigo-400 border-b-2 border-indigo-600">                <i class="fa-solid fa-map-location-dot block text-base mb-0.5"></i> Chặng            </button>            <button onclick="switchTab('exam-setup')" id="m-nav-exam" class="flex-1 py-2.5 text-center text-xs font-semibold text-slate-500 dark:text-slate-400">                <i class="fa-solid fa-stopwatch block text-base mb-0.5"></i> Thi thử            </button>            <button onclick="switchTab('search')" id="m-nav-search" class="flex-1 py-2.5 text-center text-xs font-semibold text-slate-500 dark:text-slate-400">                <i class="fa-solid fa-magnifying-glass block text-base mb-0.5"></i> Tra cứu            </button>        </div>    </header>
+    <!-- MAIN CONTAINER -->    <main class="flex-1 max-w-6xl w-full mx-auto px-4 py-6">
+        <!-- ================= SECTION 1: DASHBOARD / STAGE MAP ================= -->        <section id="tab-dashboard" class="space-y-6">            <!-- Stats Banner -->            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">                <div class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-slate-200/80 dark:border-slate-700 flex items-center gap-3">                    <div class="w-12 h-12 rounded-xl bg-indigo-100 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xl font-bold">                        <i class="fa-solid fa-layer-group"></i>                    </div>                    <div>                        <div class="text-2xl font-bold text-slate-900 dark:text-white" id="stat-total-q">250</div>                        <div class="text-xs font-medium text-slate-500 dark:text-slate-400">Tổng số câu hỏi</div>                    </div>                </div>
+                <div class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-slate-200/80 dark:border-slate-700 flex items-center gap-3">                    <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl font-bold">                        <i class="fa-solid fa-circle-check"></i>                    </div>                    <div>                        <div class="text-2xl font-bold text-slate-900 dark:text-white" id="stat-done-q">0</div>                        <div class="text-xs font-medium text-slate-500 dark:text-slate-400">Đã hoàn thành</div>                    </div>                </div>
+                <div class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-slate-200/80 dark:border-slate-700 flex items-center gap-3">                    <div class="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-950 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl font-bold">                        <i class="fa-solid fa-star"></i>                    </div>                    <div>                        <div class="text-2xl font-bold text-slate-900 dark:text-white" id="stat-bookmark-q">0</div>                        <div class="text-xs font-medium text-slate-500 dark:text-slate-400">Đã đánh dấu ⭐</div>                    </div>                </div>
+                <div class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-slate-200/80 dark:border-slate-700 flex items-center gap-3">                    <div class="w-12 h-12 rounded-xl bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-400 flex items-center justify-center text-xl font-bold">                        <i class="fa-solid fa-circle-xmark"></i>                    </div>                    <div>                        <div class="text-2xl font-bold text-slate-900 dark:text-white" id="stat-wrong-q">0</div>                        <div class="text-xs font-medium text-slate-500 dark:text-slate-400">Câu hay làm sai</div>                    </div>                </div>            </div>
+            <!-- Marathon Quick Action -->            <div class="bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 rounded-2xl p-6 text-white shadow-xl shadow-indigo-500/10 flex flex-col md:flex-row items-center justify-between gap-6">                <div class="space-y-2 text-center md:text-left">                    <span class="bg-white/20 text-white text-xs px-3 py-1 rounded-full font-semibold inline-block">Chế độ Marathon</span>                    <h2 class="text-2xl font-bold">Chinh phục toàn bộ 250 câu hỏi!</h2>                    <p class="text-indigo-100 text-sm max-w-xl">Luyện tập liên tục từ câu 1 đến câu 250 có hiển thị đáp án và giải thích ngay lập tức sau mỗi câu.</p>                </div>                <button onclick="startMarathon()" class="w-full md:w-auto px-6 py-3.5 bg-white text-indigo-700 hover:bg-indigo-50 font-bold rounded-xl shadow-lg transition duration-200 shrink-0">                    <i class="fa-solid fa-play mr-2"></i> Bắt đầu Marathon 🚀                </button>            </div>
+            <!-- Stages Grid (30 Qs per Stage) -->            <div>                <div class="flex items-center justify-between mb-4">                    <h3 class="font-bold text-lg text-slate-900 dark:text-white">🗺️ Danh sách chặng học (~25 câu/chặng)</h3>                    <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">10 Chặng</span>                </div>                <div id="stages-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">                    <!-- Stages dynamically rendered -->                </div>            </div>        </section>
+        <!-- ================= SECTION 2: PRACTICE / QUIZ PLAY ================= -->        <section id="tab-quiz" class="hidden max-w-3xl mx-auto space-y-6">            <!-- Quiz Top Bar -->            <div class="flex items-center justify-between bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-slate-200/80 dark:border-slate-700">                <button onclick="switchTab('dashboard')" class="px-3.5 py-2 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 rounded-xl text-xs font-semibold transition">                    <i class="fa-solid fa-arrow-left mr-1.5"></i> Quay lại                </button>                <div class="text-center">                    <span id="quiz-stage-title" class="font-bold text-sm text-indigo-600 dark:text-indigo-400 block">Chặng 1</span>                    <span id="quiz-progress-text" class="text-xs text-slate-500 dark:text-slate-400">Câu 1 / 30</span>                </div>                <button id="btn-bookmark-current" onclick="toggleBookmarkCurrent()" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-700 text-slate-400 hover:text-amber-500 transition flex items-center justify-center">                    <i class="fa-solid fa-star text-lg"></i>                </button>            </div>
+            <!-- Progress Bar -->            <div class="w-full bg-slate-200 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">                <div id="quiz-progress-bar" class="bg-indigo-600 h-2.5 rounded-full transition-all duration-300" style="width: 0%"></div>            </div>
+            <!-- Question Card -->            <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-md border border-slate-200/80 dark:border-slate-700 space-y-6">                <div class="flex items-start justify-between gap-3">                    <span id="quiz-q-badge" class="px-3 py-1 bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 rounded-lg text-xs font-bold border border-indigo-200 dark:border-indigo-800">                        Câu 1                    </span>                    <span id="quiz-score-badge" class="text-xs font-bold text-slate-500 dark:text-slate-400">                        Điểm: <span id="quiz-score" class="text-emerald-600 dark:text-emerald-400 font-bold">0</span>                    </span>                </div>
+                <h3 id="quiz-q-text" class="text-lg sm:text-xl font-bold leading-relaxed text-slate-900 dark:text-white">                    Nội dung câu hỏi...                </h3>
+                <!-- Options List -->                <div id="quiz-options" class="space-y-3">                    <!-- Options buttons rendered via JS -->                </div>
+                <!-- Explanation Box -->                <div id="quiz-explanation" class="hidden p-4 rounded-xl bg-slate-50 dark:bg-slate-900/60 border-l-4 border-indigo-500 space-y-1">                    <div class="font-bold text-xs uppercase tracking-wider text-indigo-600 dark:text-indigo-400">💡 Chú thích & Đáp án đúng:</div>                    <p id="quiz-explanation-text" class="text-sm leading-relaxed text-slate-700 dark:text-slate-300"></p>                </div>            </div>
+            <!-- Bottom Control Buttons -->            <div class="flex items-center justify-between gap-3">                <button id="btn-prev-q" onclick="navigatePractice(-1)" class="px-5 py-3 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 font-bold rounded-xl text-sm transition disabled:opacity-50">                    <i class="fa-solid fa-chevron-left mr-1"></i> Câu trước                </button>                <button id="btn-next-q" onclick="navigatePractice(1)" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-sm shadow-md transition flex-1 max-w-xs">                    Câu tiếp theo <i class="fa-solid fa-chevron-right ml-1"></i>                </button>            </div>        </section>
+        <!-- ================= SECTION 3: EXAM SETUP & PLAY ================= -->        <section id="tab-exam-setup" class="hidden max-w-xl mx-auto">            <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 shadow-md border border-slate-200/80 dark:border-slate-700 space-y-6 text-center">                <div class="w-16 h-16 rounded-2xl bg-indigo-100 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-3xl mx-auto font-bold shadow-inner">                    <i class="fa-solid fa-stopwatch"></i>                </div>                <div>                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Chế độ Thi Thử (Kiểm Tra)</h2>                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Hệ thống chọn ngẫu nhiên câu hỏi từ ngân hàng Full 250 câu, tính giờ đếm ngược và chấm điểm tự động.</p>                </div>
+                <div class="space-y-4 text-left">                    <div>                        <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase">Số lượng câu hỏi:</label>                        <select id="exam-q-count" class="w-full p-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 font-semibold text-sm">                            <option value="20">20 Câu hỏi</option>                            <option value="40" selected>40 Câu hỏi</option>                            <option value="60">60 Câu hỏi</option>                            <option value="100">100 Câu hỏi</option>                            <option value="541">Toàn bộ 250 câu hỏi</option>                        </select>                    </div>
+                    <div>                        <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase">Thời gian làm bài:</label>                        <select id="exam-time-limit" class="w-full p-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 font-semibold text-sm">                            <option value="15">15 Phút</option>                            <option value="30" selected>30 Phút</option>                            <option value="45">45 Phút</option>                            <option value="60">60 Phút</option>                        </select>                    </div>                </div>
+                <button onclick="startExam()" class="w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-lg transition duration-200">                    <i class="fa-solid fa-play mr-2"></i> Bắt đầu thi thử ngay                </button>            </div>        </section>
+        <section id="tab-exam-play" class="hidden max-w-3xl mx-auto space-y-6">            <!-- Exam Sticky Header -->            <div class="sticky top-16 z-30 bg-white/95 dark:bg-slate-800/95 backdrop-blur p-4 rounded-2xl shadow-md border border-slate-200/80 dark:border-slate-700 flex items-center justify-between">                <div>                    <span class="text-xs font-bold text-slate-500 dark:text-slate-400 block">Đang thi thử</span>                    <span id="exam-progress-counter" class="font-bold text-sm text-indigo-600 dark:text-indigo-400">Câu 1 / 40</span>                </div>
+                <div class="flex items-center gap-2 bg-rose-50 dark:bg-rose-950/60 border border-rose-200 dark:border-rose-800 px-4 py-2 rounded-xl text-rose-600 dark:text-rose-400 font-bold text-sm">                    <i class="fa-solid fa-clock"></i>                    <span id="exam-timer">30:00</span>                </div>
+                <button onclick="confirmSubmitExam()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs shadow transition">                    <i class="fa-solid fa-check mr-1"></i> Nộp bài                </button>            </div>
+            <!-- Exam Question Card -->            <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-md border border-slate-200/80 dark:border-slate-700 space-y-6">                <span id="exam-q-badge" class="px-3 py-1 bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 rounded-lg text-xs font-bold border border-indigo-200 dark:border-indigo-800 inline-block">                    Câu 1                </span>                <h3 id="exam-q-text" class="text-lg sm:text-xl font-bold leading-relaxed text-slate-900 dark:text-white">Nội dung...</h3>
+                <div id="exam-options" class="space-y-3">                    <!-- Render options -->                </div>            </div>
+            <!-- Exam Navigation & Grid Menu -->            <div class="flex items-center justify-between gap-3">                <button onclick="navigateExam(-1)" class="px-4 py-2.5 bg-slate-200 dark:bg-slate-700 font-bold rounded-xl text-sm">⬅️ Câu trước</button>                <button onclick="openExamGrid()" class="px-4 py-2.5 bg-slate-100 dark:bg-slate-700/80 font-bold rounded-xl text-sm text-indigo-600 dark:text-indigo-400">                    <i class="fa-solid fa-border-all mr-1"></i> Bảng danh sách câu                </button>                <button onclick="navigateExam(1)" class="px-4 py-2.5 bg-indigo-600 text-white font-bold rounded-xl text-sm">Câu tiếp ➡️</button>            </div>        </section>
+        <!-- ================= SECTION 4: SEARCH & QUESTION BANK ================= -->        <section id="tab-search" class="hidden space-y-6">            <!-- Search Control Bar -->            <div class="bg-white dark:bg-slate-800 p-4 sm:p-6 rounded-2xl shadow-sm border border-slate-200/80 dark:border-slate-700 space-y-4">                <div class="relative">                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-slate-400"></i>                    <input type="text" id="search-input" oninput="filterQuestions()" placeholder="Nhập từ khóa tìm kiếm hoặc số câu (VD: 1, vật chất, Lênin)..." class="w-full pl-11 pr-4 py-3 bg-slate-100 dark:bg-slate-700 border-none rounded-xl text-sm focus:ring-2 focus:ring-indigo-500 font-medium">                </div>
+                <div class="flex flex-wrap gap-2 text-xs font-semibold">                    <button onclick="setSearchFilter('all')" id="filter-all" class="px-3.5 py-2 rounded-xl bg-indigo-600 text-white">Tất cả (200)</button>                    <button onclick="setSearchFilter('wrong')" id="filter-wrong" class="px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Hay làm sai ❌</button>                    <button onclick="setSearchFilter('bookmark')" id="filter-bookmark" class="px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Đã đánh dấu ⭐</button>                    <button onclick="setSearchFilter('unattempted')" id="filter-unattempted" class="px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Chưa làm ⚪</button>                </div>            </div>
+            <!-- Questions Search Results List -->            <div id="search-results-list" class="space-y-4">                <!-- Search items rendered dynamically -->            </div>        </section>
+    </main>
+    <!-- EXAM RESULT MODAL -->    <div id="modal-exam-result" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">        <div class="bg-white dark:bg-slate-800 rounded-3xl max-w-lg w-full p-6 sm:p-8 text-center shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto custom-scrollbar">            <div class="w-20 h-20 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-500 flex items-center justify-center text-4xl mx-auto shadow-inner">                🏆            </div>            <div>                <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Kết Quả Bài Thi</h2>                <p id="exam-result-subtitle" class="text-sm text-slate-500 dark:text-slate-400 mt-1">Bạn đã hoàn thành bài kiểm tra!</p>            </div>
+            <div class="grid grid-cols-2 gap-3">                <div class="bg-slate-50 dark:bg-slate-700/50 p-4 rounded-2xl border border-slate-200 dark:border-slate-700">                    <span class="text-xs text-slate-500 dark:text-slate-400 block font-semibold">Điểm số</span>                    <span id="exam-final-score" class="text-3xl font-bold text-indigo-600 dark:text-indigo-400">0/100</span>                </div>                <div class="bg-slate-50 dark:bg-slate-700/50 p-4 rounded-2xl border border-slate-200 dark:border-slate-700">                    <span class="text-xs text-slate-500 dark:text-slate-400 block font-semibold">Tỷ lệ đúng</span>                    <span id="exam-final-percent" class="text-3xl font-bold text-emerald-600 dark:text-emerald-400">0%</span>                </div>            </div>
+            <button onclick="closeResultModal()" class="w-full py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-md transition">                Quay lại Trang chủ 🏠            </button>        </div>    </div>
+    <!-- EXAM GRID MODAL -->    <div id="modal-exam-grid" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">        <div class="bg-white dark:bg-slate-800 rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-4">            <div class="flex items-center justify-between">                <h3 class="font-bold text-base text-slate-900 dark:text-white">Danh sách câu hỏi thi thử</h3>                <button onclick="closeExamGrid()" class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark text-lg"></i></button>            </div>            <div id="exam-grid-container" class="grid grid-cols-5 gap-2 max-h-64 overflow-y-auto custom-scrollbar p-1">                <!-- Grid buttons -->            </div>            <button onclick="closeExamGrid()" class="w-full py-2.5 bg-slate-200 dark:bg-slate-700 font-bold rounded-xl text-sm">Đóng</button>        </div>    </div>
+     <script>
+        // FULL DATASET ARRAY (1 - 250 QUESTIONS)
+const quizData = [
+  {
+    "id": 1,
+    "q": "Theo Katzenbach & Smith, nhóm là:",
+    "o": [
+      "Hai người trở lên có các kỹ năng hỗ trợ nhau cùng hoạt động để đạt mục tiêu chung",
+      "Một số người có các kỹ năng hỗ trợ nhau cùng hoạt động để đạt mục tiêu chung",
+      "Hai người trở lên có các kỹ năng hỗ trợ nhau, họ cam kết thực hiện một mục đích, mục tiêu hoạt động chung để giải quyết vấn đề mà họ cũng chịu trách nhiệm",
+      "Một số người có các kỹ năng hỗ trợ nhau, họ cam kết thực hiện một mục đích, mục tiêu hoạt động chung để giải quyết vấn đề mà họ cùng chịu trách nhiệm"
+    ],
+    "c": 3,
+    "explanation": "Định nghĩa kinh điển của Katzenbach & Smith (1993) nêu rõ nhóm là một số người có các kỹ năng hỗ trợ nhau, cam kết thực hiện mục đích/mục tiêu chung và cùng chịu trách nhiệm."
+  },
+  {
+    "id": 2,
+    "q": "Khi gọi là nhóm, cần đảm bảo các thành tố quan trọng nào sau đây:",
+    "o": [
+      "Số lượng thành viên từ 2 người trở lên; làm việc với nhau thường xuyên và phụ thuộc lẫn nhau; chia sẻ thực hiện mục tiêu chung",
+      "Số lượng thành viên từ 2 người trở lên; giao tiếp và tương tác với nhau thường xuyên; chia sẻ thực hiện mục tiêu chung",
+      "Số lượng thành viên từ 2 người trở lên; chia sẻ thực hiện mục tiêu chung",
+      "Số lượng thành viên từ 2 người trở lên; chia sẻ thực hiện mục tiêu chung; làm việc với nhau thường xuyên và phụ thuộc lẫn nhau; có sự tương tác, giao tiếp và hỗ trợ nhau"
+    ],
+    "c": 0,
+    "explanation": "Ba thành tố cốt lõi của một nhóm gồm: số lượng từ 2 người trở lên, làm việc thường xuyên/phụ thuộc lẫn nhau, tương tác giao tiếp và chia sẻ mục tiêu chung."
+  },
+  {
+    "id": 3,
+    "q": "Mục đích chính của nhóm là gì?",
+    "o": [
+      "Tạo ra sự cạnh tranh nội bộ",
+      "Giải trí sau giờ làm việc",
+      "Chia sẻ thông tin cá nhân",
+      "Thực hiện một mục đích, mục tiêu hoạt động chung"
+    ],
+    "c": 3,
+    "explanation": "Mục đích tối thượng của nhóm là kết hợp sức mạnh cá nhân để thực hiện mục tiêu hoạt động chung."
+  },
+  {
+    "id": 4,
+    "q": "Các thành viên trong nhóm cam kết điều gì?",
+    "o": [
+      "Hoàn thành nhiệm vụ cá nhân",
+      "Giải quyết vấn đề mà mỗi thành viên tự chịu trách nhiệm",
+      "Giải quyết vấn đề các thành viên trong nhóm cùng chịu trách nhiệm",
+      "Không tham gia vào hoạt động chung"
+    ],
+    "c": 2,
+    "explanation": "Tinh thần trách nhiệm tương thuộc trong nhóm đòi hỏi các thành viên cùng cam kết giải quyết vấn đề mà cả nhóm cùng chịu trách nhiệm."
+  },
+  {
+    "id": 5,
+    "q": "Trong các đặc điểm dưới đây, đâu không phải là đặc điểm của một nhóm làm việc?",
+    "o": [
+      "Các thành viên có kỹ năng hỗ trợ nhau",
+      "Có mục tiêu hoạt động chung",
+      "Từng cá nhân làm việc độc lập, không liên quan nhau",
+      "Cùng chịu trách nhiệm giải quyết vấn đề"
+    ],
+    "c": 2,
+    "explanation": "Trong nhóm làm việc, các thành viên hoạt động phụ thuộc lẫn nhau chứ không làm việc biệt lập, độc lập không liên quan."
+  },
+  {
+    "id": 6,
+    "q": "Trong một nhóm dự án, các thành viên có kỹ năng khác nhau, cùng cam kết đạt mục tiêu chung. Yếu tố nào quyết định nhóm đó có thể giải quyết vấn đề đạt hiệu quả nhất?",
+    "o": [
+      "Mỗi người làm việc độc lập, tránh phụ thuộc",
+      "Các thành viên có kỹ năng và hỗ trợ lẫn nhau",
+      "Mỗi người chỉ tập trung vào kỹ năng mạnh nhất của mình mà không phối hợp",
+      "Tất cả thành viên có cùng kỹ năng giống nhau"
+    ],
+    "c": 1,
+    "explanation": "Sự đa dạng về kỹ năng và tinh thần sẵn sàng hỗ trợ, bổ sung cho nhau là yếu tố quyết định hiệu quả giải quyết vấn đề của nhóm."
+  },
+  {
+    "id": 7,
+    "q": "Nếu một nhóm thiếu mục tiêu hoạt động chung, điều gì có khả năng xảy ra nhất?",
+    "o": [
+      "Các thành viên vẫn phối hợp tốt như thường",
+      "Nhóm sẽ tự động hình thành mục tiêu riêng của từng thành viên",
+      "Hiệu quả làm việc giảm vì không có định hướng chung",
+      "Vấn đề vẫn được giải quyết do mỗi thành viên tự chịu trách nhiệm"
+    ],
+    "c": 2,
+    "explanation": "Mục tiêu chung đóng vai trò kim chỉ nam; thiếu nó, hoạt động của nhóm sẽ mất phương hướng và hiệu quả giảm sút rõ rệt."
+  },
+  {
+    "id": 8,
+    "q": "Trong khái niệm về nhóm, \"cùng chịu trách nhiệm\" có nghĩa là:",
+    "o": [
+      "Mỗi thành viên chỉ chịu trách nhiệm cho phần việc của mình",
+      "Kết quả tốt hay xấu đều là trách nhiệm của toàn nhóm",
+      "Một người lãnh đạo sẽ chịu trách nhiệm thay nhóm",
+      "Các thành viên không liên quan đến trách nhiệm chung"
+    ],
+    "c": 1,
+    "explanation": "\"Cùng chịu trách nhiệm\" khẳng định sự gắn kết sinh tử: thành công hay thất bại của dự án là trách nhiệm tập thể."
+  },
+  {
+    "id": 9,
+    "q": "Lý do để cá nhân tham gia nhóm là:",
+    "o": [
+      "An toàn, hội nhập",
+      "An toàn, sức mạnh",
+      "An toàn, hội nhập, sức mạnh",
+      "An toàn, hội nhập, sức mạnh, quyền lợi"
+    ],
+    "c": 2,
+    "explanation": "Theo tài liệu học tập, 3 lý do căn bản khiến cá nhân gia nhập nhóm bao gồm: nhu cầu An toàn, nhu cầu Hội nhập xã hội, và tạo nên Sức mạnh tổng hợp."
+  },
+  {
+    "id": 10,
+    "q": "Vì sao làm việc nhóm mang lại sức mạnh hơn làm việc cá nhân?",
+    "o": [
+      "Giúp mỗi người có thể đáp ứng các nhu cầu của xã hội",
+      "Vì nhóm hội tụ được tài năng, kiến thức để hoàn thành công việc",
+      "Giảm sự khác biệt về kỹ năng giữa các thành viên",
+      "Đảm bảo mọi người có cơ hội lãnh đạo"
+    ],
+    "c": 1,
+    "explanation": "Nhóm tổng hợp tri thức, kinh nghiệm và tài năng của nhiều cá nhân, tạo ra sức mạnh cộng hưởng lớn hơn làm việc đơn lẻ."
+  },
+  {
+    "id": 11,
+    "q": "Yếu tố nào không phải là lý do chính khiến cá nhân tham gia làm việc nhóm theo nội dung trên?",
+    "o": [
+      "An toàn",
+      "Hội nhập",
+      "Sức mạnh",
+      "Giảm thời gian đào tạo"
+    ],
+    "c": 3,
+    "explanation": "Ba lý do chính là An toàn, Hội nhập và Sức mạnh. \"Giảm thời gian đào tạo\" không thuộc nhóm lý do cá nhân tham gia nhóm."
+  },
+  {
+    "id": 12,
+    "q": "Một nhân viên tham gia nhóm vừa để cảm thấy được bảo vệ, vừa để có thêm mối quan hệ xã hội, và tận dụng sự kết hợp tài năng của các thành viên để đạt hiệu quả cao. Điều này phản ánh:",
+    "o": [
+      "Chỉ một lý do duy nhất - an toàn",
+      "Cả ba lý do: an toàn, hội nhập, sức mạnh",
+      "Hai lý do: hội nhập và sức mạnh",
+      "Hai lý do: an toàn và hội nhập"
+    ],
+    "c": 1,
+    "explanation": "Tình huống hội tụ đủ cả 3 khía cạnh: cảm giác bảo vệ (An toàn), mối quan hệ (Hội nhập), và kết hợp tài năng (Sức mạnh)."
+  },
+  {
+    "id": 13,
+    "q": "Làm việc nhóm cần đảm bảo những yêu cầu:",
+    "o": [
+      "Có mục tiêu chung; quản trị thống nhất; quản lý xung đột; tin tưởng; tôn trọng; gắn kết; gương mẫu; cải tiến liên tục",
+      "Có mục tiêu chung; quản trị thống nhất; phân công hiệu quả; trách nhiệm rõ ràng; quản lý xung đột; cải tiến liên tục, giao tiếp hiệu quả",
+      "Có mục tiêu chung; giao tiếp hiệu quả; tin tưởng; tôn trọng; gắn kết; gương mẫu; cải tiến liên tục",
+      "Có mục tiêu chung; giao tiếp hiệu quả; quản trị thống nhất; phân công hiệu quả; trách nhiệm rõ ràng; quản lý xung đột; tin tưởng; tôn trọng; gắn kết; gương mẫu; cải tiến liên tục"
+    ],
+    "c": 3,
+    "explanation": "Đây là tập hợp đầy đủ tất cả các yêu cầu cần thiết để hoạt động làm việc nhóm đạt hiệu quả cao nhất."
+  },
+  {
+    "id": 14,
+    "q": "Theo Working in groups - Isa N. Engleberg và Dianna R. Wynn, làm việc nhóm là gì?",
+    "o": [
+      "Sự cạnh tranh giữa các thành viên để đạt mục tiêu cá nhân",
+      "Sự phân chia nhiệm vụ để mỗi thành viên làm việc độc lập",
+      "Hoạt động giao lưu, giải trí giữa các thành viên",
+      "Sự hợp tác của các thành viên trong nhóm để đạt mục tiêu chung"
+    ],
+    "c": 3,
+    "explanation": "Định nghĩa trong cuốn Working in Groups nhấn mạnh làm việc nhóm là sự hợp tác giữa các thành viên nhằm thực hiện mục tiêu chung."
+  },
+  {
+    "id": 15,
+    "q": "Làm việc nhóm giúp các thành viên hướng tới điều gì?",
+    "o": [
+      "Tầm nhìn chung của nhóm",
+      "Hoàn thành công việc chậm nhất",
+      "Mục tiêu cá nhân của từng người",
+      "Chỉ tiêu doanh thu của cá nhân"
+    ],
+    "c": 0,
+    "explanation": "Làm việc nhóm định hướng mọi nỗ lực và thành tựu cá nhân về tầm nhìn và mục tiêu chung của tổ chức/nhóm."
+  },
+  {
+    "id": 16,
+    "q": "Yếu tố nào sau đây không phản ánh đúng bản chất của làm việc nhóm?",
+    "o": [
+      "Các thành viên hợp tác vì mục tiêu chung",
+      "Tầm nhìn chung là định hướng hoạt động",
+      "Thành tựu cá nhân gắn liền với mục tiêu tổ chức",
+      "Mỗi cá nhân chỉ quan tâm đến kết quả của riêng mình"
+    ],
+    "c": 3,
+    "explanation": "Bản chất của làm việc nhóm là sự tương thuộc và hướng tới kết quả chung, trái ngược với thái độ ích kỷ chỉ lo cho kết quả riêng."
+  },
+  {
+    "id": 17,
+    "q": "Kỹ năng là:",
+    "o": [
+      "Khả năng thực hiện đúng một chuỗi hành động, phù hợp với những mục tiêu và điều kiện cụ thể tiến hành hoạt động ấy cho dù đó là hành động cụ thể hay hành động trí tuệ",
+      "Khả năng thực hiện đúng hành động, hoạt động phù hợp với những mục tiêu và điều kiện cụ thể tiến hành hoạt động ấy cho dù đó là hành động cụ thể hay hành động trí tuệ",
+      "Khả năng thực hiện đúng một chuỗi hành động phù hợp với những mục tiêu chung, có sự tương tác dù đó là hành động cụ thể hay hành động trí tuệ",
+      "Khả năng thực hiện đúng hành động, đảm bảo đạt được mục tiêu dù đó là hành động cụ thể hay hành động trí tuệ"
+    ],
+    "c": 1,
+    "explanation": "Theo Từ điển Giáo dục học, kỹ năng là \"khả năng thực hiện đúng hành động, hoạt động phù hợp với những mục tiêu và điều kiện cụ thể...\"."
+  },
+  {
+    "id": 18,
+    "q": "Trong làm việc nhóm, thành tựu cá nhân nên được định hướng như thế nào để mang lại lợi ích tối đa?",
+    "o": [
+      "Đáp ứng các mục tiêu của tổ chức",
+      "Chỉ phục vụ nhu cầu và mong muốn cá nhân",
+      "Không cần liên quan đến kết quả chung",
+      "Dựa vào đánh giá của cá nhân về hiệu quả công việc"
+    ],
+    "c": 0,
+    "explanation": "Như Andrew Carnegie đã chỉ ra, thành công của nhóm đến từ việc hướng thành tựu cá nhân vào mục tiêu của tổ chức."
+  },
+  {
+    "id": 19,
+    "q": "Theo Từ điển Giáo dục học, kỹ năng là gì?",
+    "o": [
+      "Sự hiểu biết lý thuyết về một lĩnh vực",
+      "Khả năng thực hiện đúng hành động, hoạt động phù hợp với mục tiêu và điều kiện cụ thể tiến hành hoạt động ấy cho dù đó là hành động cụ thể hay hành động trí tuệ",
+      "Năng lực sáng tạo ra kiến thức mới",
+      "Khả năng ghi nhớ thông tin lâu dài"
+    ],
+    "c": 1,
+    "explanation": "Khái niệm kỹ năng trích nguyên văn từ Từ điển Giáo dục học."
+  },
+  {
+    "id": 20,
+    "q": "Kỹ năng có thể áp dụng cho loại hành động nào?",
+    "o": [
+      "Chỉ áp dụng cho hành động cụ thể",
+      "Chỉ áp dụng cho hành động trí tuệ",
+      "Cả hành động cụ thể và hành động trí tuệ",
+      "Chỉ áp dụng khi có công cụ hỗ trợ"
+    ],
+    "c": 2,
+    "explanation": "Định nghĩa về kỹ năng khẳng định nó bao quát cả hành động tay chân cụ thể lẫn hoạt động tư duy trí tuệ."
+  },
+  {
+    "id": 21,
+    "q": "Điểm quan trọng để một hành động được coi là kỹ năng là gì?",
+    "o": [
+      "Phải được thực hiện nhanh chóng",
+      "Phải do cá nhân tự nghĩ ra",
+      "Phải mang tính sáng tạo",
+      "Phải phù hợp với mục tiêu và điều kiện cụ thể"
+    ],
+    "c": 3,
+    "explanation": "Yếu tố cốt lõi cấu thành kỹ năng là tính phù hợp với mục tiêu và điều kiện thực tiễn khi hành động."
+  },
+  {
+    "id": 22,
+    "q": "Theo định nghĩa trong Từ điển Giáo dục học, kỹ năng không phụ thuộc vào yếu tố nào dưới đây?",
+    "o": [
+      "Mục tiêu thực hiện",
+      "Điều kiện cụ thể",
+      "Loại hành động (cụ thể hay trí tuệ)",
+      "Ý kiến chủ quan của người quan sát"
+    ],
+    "c": 3,
+    "explanation": "Kỹ năng được đo lường bằng năng lực thực hiện chuẩn xác khách quan chứ không phụ thuộc vào cảm tính chủ quan của người quan sát."
+  },
+  {
+    "id": 23,
+    "q": "Có thể thực hành rèn luyện kỹ năng theo mấy bước:",
+    "o": [
+      "Chỉ 1 bước duy nhất",
+      "Từ 2 bước trở lên",
+      "3 bước",
+      "4 bước"
+    ],
+    "c": 3,
+    "explanation": "Quy trình rèn luyện kỹ năng tiêu chuẩn gồm 4 bước (Mô hình LAMS: Learn - Apply - Master - Share)."
+  },
+  {
+    "id": 24,
+    "q": "Những bước cần thiết để rèn luyện kỹ năng là:",
+    "o": [
+      "Làm quen; Áp dụng",
+      "Làm quen; áp dụng; mài sắc",
+      "Làm quen; áp dụng; mài sắc; sẻ chia",
+      "Làm quen; mài sắc; sẻ chia"
+    ],
+    "c": 2,
+    "explanation": "4 bước tiếng Việt tương ứng: Làm quen (Learn), Áp dụng (Apply), Mài sắc (Master), Sẻ chia (Share)."
+  },
+  {
+    "id": 25,
+    "q": "Các bước rèn luyện kỹ năng làm việc nhóm?",
+    "o": [
+      "Learn, Apply, Master, Share",
+      "Learn, Apply, Master",
+      "Learn, Apply, Share",
+      "Apply, Master, Share"
+    ],
+    "c": 0,
+    "explanation": "Tên viết tắt tiếng Anh chuẩn của mô hình 4 bước là LAMS: Learn, Apply, Master, Share."
+  },
+  {
+    "id": 26,
+    "q": "Trong các bước rèn luyện kỹ năng, bước làm quen là:",
+    "o": [
+      "Tiếp cận và trau dồi thêm kiến thức chuyên môn",
+      "Tiếp cận và làm chủ được kiến thức chuyên môn",
+      "Tiếp cận, làm chủ và trau dồi kiến thức chuyên môn",
+      "Tiếp cận và làm chủ được kiến thức chuyên môn và trau dồi thêm kiến thức liên ngành"
+    ],
+    "c": 0,
+    "explanation": "Bước Learn (Làm quen) là giai đoạn đầu tiên khi tiếp nhận, học hỏi lý thuyết và tiếp cận kiến thức mới."
+  },
+  {
+    "id": 27,
+    "q": "Trong các bước rèn luyện kỹ năng, bước áp dụng là:",
+    "o": [
+      "Áp dụng kiến thức học được và không ngừng cải tiến vào công việc, cuộc sống hàng ngày",
+      "Áp dụng kiến thức học được và không ngừng cải tiến vào học tập, công việc hàng ngày",
+      "Áp dụng kiến thức học được và không ngừng cải tiến vào học tập, cuộc sống hàng ngày",
+      "Áp dụng kiến thức học được và không ngừng cải tiến vào cuộc sống hàng ngày"
+    ],
+    "c": 2,
+    "explanation": "Bước Apply (Áp dụng) yêu cầu thực hành kiến thức vào học tập và đời sống thực tế một cách liên tục."
+  },
+  {
+    "id": 28,
+    "q": "Trong các bước rèn luyện kỹ năng, bước mài sắc là:",
+    "o": [
+      "Sau một thời gian áp dụng, kỹ năng mới đã dần được hoàn thiện",
+      "Đã thuần thục kỹ năng",
+      "Cần gọt giũa để đưa kỹ năng lên đỉnh cao",
+      "Tất cả đáp án đều đúng"
+    ],
+    "c": 3,
+    "explanation": "Bước Master (Mài sắc) là quá trình hoàn thiện, thuần thục và tinh chỉnh kỹ năng đạt tới đỉnh cao."
+  },
+  {
+    "id": 29,
+    "q": "Trong các bước rèn luyện kỹ năng, bước sẻ chia là:",
+    "o": [
+      "Hướng dẫn người khác làm giống mình",
+      "Hướng dẫn người khác làm chủ kỹ năng",
+      "Hướng dẫn người khác làm chủ thái độ",
+      "Hướng dẫn người khác làm chủ kiến thức"
+    ],
+    "c": 0,
+    "explanation": "Đỉnh cao của việc làm chủ kỹ năng ở bước Share (Sẻ chia) là có thể truyền đạt, hướng dẫn người khác thực hành thành công như mình."
+  },
+  {
+    "id": 30,
+    "q": "Một nhân viên sau khi học lý thuyết làm việc nhóm đã bắt đầu tham gia dự án thực tế và điều chỉnh cách làm để phù hợp hơn với nhóm. Đây là minh họa cho bước nào?",
+    "o": [
+      "Learn",
+      "Apply",
+      "Master",
+      "Share"
+    ],
+    "c": 1,
+    "explanation": "Việc mang lý thuyết vào thực địa dự án và điều chỉnh hành vi chính là bước Áp dụng (Apply)."
+  },
+  {
+    "id": 31,
+    "q": "Khi một kỹ năng làm việc nhóm đã được thực hành nhiều lần, trở nên thuần thục và ít mắc lỗi, người đó đang ở giai đoạn nào?",
+    "o": [
+      "Learn",
+      "Apply",
+      "Master",
+      "Share"
+    ],
+    "c": 2,
+    "explanation": "Thực hành nhuần nhuyễn, thuần thục và ít sai sót biểu thị giai đoạn Mài sắc / Thành thạo (Master)."
+  },
+  {
+    "id": 32,
+    "q": "Trong bối cảnh doanh nghiệp khuyến khích lan tỏa tri thức nội bộ, nhân viên đã thành thạo kỹ năng quản lý xung đột trong nhóm và bắt đầu tổ chức buổi hướng dẫn cho đồng nghiệp. Đây thuộc bước nào trong rèn luyện kỹ năng?",
+    "o": [
+      "Learn",
+      "Apply",
+      "Master",
+      "Share"
+    ],
+    "c": 3,
+    "explanation": "Hướng dẫn và chia sẻ kiến thức/kỹ năng cho người khác chính là bước Sẻ chia (Share)."
+  },
+  {
+    "id": 33,
+    "q": "Trình tự đúng của các bước rèn luyện kỹ năng làm việc nhóm theo mô hình Learn - Apply - Master - Share là:",
+    "o": [
+      "Learn → Apply → Share → Master",
+      "Apply → Learn → Master → Share",
+      "Learn → Apply → Master → Share",
+      "Learn → Master → Apply → Share"
+    ],
+    "c": 2,
+    "explanation": "Trình tự tiến trình phát triển kỹ năng logic: Học (Learn) -> Làm (Apply) -> Giỏi (Master) -> Dạy/Chia sẻ (Share)."
+  },
+  {
+    "id": 34,
+    "q": "Kỹ năng làm việc nhóm là:",
+    "o": [
+      "Khả năng thiết lập được nhóm làm việc",
+      "Khả năng đóng góp tích cực của mỗi cá nhân vào tập thể",
+      "Khả năng hợp tác và tương tác hiệu quả với các thành viên khác trong một nhóm để đạt được mục tiêu chung",
+      "Khả năng thích nghi, hòa nhập tốt trong môi trường nhóm"
+    ],
+    "c": 2,
+    "explanation": "Định nghĩa chuẩn về kỹ năng làm việc nhóm theo Giáo trình."
+  },
+  {
+    "id": 35,
+    "q": "Quá trình làm việc nhóm cần trang bị những kỹ năng nào sau đây:",
+    "o": [
+      "Kỹ năng giao tiếp; Kỹ năng tổ chức và điều hành cuộc họp; Kỹ năng giải quyết mâu thuẫn, xung đột; Kỹ năng quản lý thời gian",
+      "Kỹ năng lập kế hoạch và tổ chức nhóm làm việc; Kỹ năng tổ chức, phân công công việc; Kỹ năng giải quyết vấn đề",
+      "Kỹ năng thu thập và xử lý thông tin; Kỹ năng thuyết trình; Kỹ năng ra quyết định",
+      "Kỹ năng giao tiếp; Kỹ năng thuyết trình; Kỹ năng tổ chức và điều hành cuộc họp; Kỹ năng giải quyết mâu thuẫn, xung đột; Kỹ năng ra quyết định; Kỹ năng quản lý thời gian; Kỹ năng lập kế hoạch và tổ chức nhóm làm việc; Kỹ năng tổ chức, phân công công việc; Kỹ năng thuyết phục; Kỹ năng tư duy phản biện; Kỹ năng hợp tác"
+    ],
+    "c": 3,
+    "explanation": "Đáp án D liệt kê trọn vẹn bộ kỹ năng mềm bổ trợ cần có trong tiến trình làm việc nhóm."
+  },
+  {
+    "id": 36,
+    "q": "Điều nào sau đây không phải là lợi ích của làm việc nhóm đối với doanh nghiệp?",
+    "o": [
+      "Thúc đẩy hiệu suất công việc",
+      "Gắn kết lãnh đạo với nhân viên",
+      "Lựa chọn được phương án tối ưu",
+      "Giảm cơ hội hợp tác giữa các bộ phận"
+    ],
+    "c": 3,
+    "explanation": "Làm việc nhóm giúp tăng cường hợp tác liên bộ phận, do đó \"Giảm cơ hội hợp tác\" là sai với thực tế."
+  },
+  {
+    "id": 37,
+    "q": "Đâu là tầm quan trọng của làm việc nhóm?",
+    "o": [
+      "Tập trung được khả năng của từng người",
+      "Mang lại hiệu quả công việc tốt hơn",
+      "Tạo môi trường làm việc thân thiện",
+      "Tất cả đáp án đều đúng"
+    ],
+    "c": 3,
+    "explanation": "Làm việc nhóm mang lại lợi ích toàn diện về năng suất, phát triển cá nhân và xây dựng văn hóa tổ chức."
+  },
+  {
+    "id": 38,
+    "q": "Ưu điểm của làm việc nhóm trong học tập?",
+    "o": [
+      "Giảm áp lực học một mình",
+      "Hiệu quả học tập tốt hơn; Phát triển kỹ năng",
+      "Xây dựng được quan hệ tốt với nhiều thành viên trong cộng đồng học tập",
+      "Tất cả đáp án đều đúng"
+    ],
+    "c": 3,
+    "explanation": "Cả A, B, C đều là ưu điểm nổi bật của học tập nhóm đối với người học."
+  },
+  {
+    "id": 39,
+    "q": "Ưu điểm của làm việc nhóm trong công việc?",
+    "o": [
+      "Giải quyết được các vấn đề phức tạp về chuyên môn trong từng công việc cụ thể",
+      "Đạt được các mục tiêu với hiệu quả cao nhất",
+      "Thực hiện những dự án lớn cần nhiều người tham gia",
+      "Tất cả đáp án đều đúng"
+    ],
+    "c": 3,
+    "explanation": "Nhóm làm việc hỗ trợ xử lý khối lượng công việc lớn và các bài toán chuyên môn phức tạp."
+  },
+  {
+    "id": 40,
+    "q": "Nhược điểm của làm việc nhóm?",
+    "o": [
+      "Tốn thời gian, năng lượng và các nguồn lực",
+      "Tiềm ẩn những xung đột",
+      "Vấn đề về con người",
+      "Tất cả đáp án đều đúng"
+    ],
+    "c": 3,
+    "explanation": "Ba thách thức lớn nhất của làm việc nhóm gồm chi phí phối hợp, nguy cơ va chạm/xung đột và sự phức tạp về tâm lý cá nhân."
+  },
+  {
+    "id": 41,
+    "q": "Có bao nhiêu giai đoạn chính trong sự hình thành và phát triển nhóm làm việc?",
+    "o": [
+      "3",
+      "5",
+      "4",
+      "2"
+    ],
+    "c": 1,
+    "explanation": "Theo mô hình phát triển nhóm nổi tiếng của Bruce Tuckman, nhóm trải qua 5 giai đoạn: Forming, Storming, Norming, Performing, Adjourning."
+  },
+  {
+    "id": 42,
+    "q": "Nhóm mới được thành lập, các thành viên còn lạ lẫm và đang tìm hiểu nhau. Đây là giai đoạn nào?",
+    "o": [
+      "Sóng gió",
+      "Hình thành",
+      "Chuẩn hóa",
+      "Thể hiện"
+    ],
+    "c": 1,
+    "explanation": "Giai đoạn Hình thành (Forming) đặc trưng bởi sự lạ lẫm, tìm hiểu và thăm dò lẫn nhau."
+  },
+  {
+    "id": 43,
+    "q": "Trong nhóm của bạn, mọi người bắt đầu xảy ra tranh luận gay gắt về vai trò và cách làm việc. Đây là đặc trưng của giai đoạn nào?",
+    "o": [
+      "Sóng gió",
+      "Chuẩn hóa",
+      "Thể hiện",
+      "Kết thúc"
+    ],
+    "c": 0,
+    "explanation": "Giai đoạn Sóng gió (Storming) xuất hiện các mâu thuẫn, tranh luận về vai trò, quyền lực và định hướng."
+  },
+  {
+    "id": 44,
+    "q": "Nhóm của bạn đã thống nhất được quy tắc làm việc, vai trò rõ ràng và hợp tác tốt hơn. Đây là giai đoạn nào?",
+    "o": [
+      "Chuẩn hóa",
+      "Hình thành",
+      "Thể hiện",
+      "Kết thúc"
+    ],
+    "c": 0,
+    "explanation": "Giai đoạn Chuẩn hóa (Norming) thiết lập được quy chế, chuẩn mực làm việc và sự đồng thuận."
+  },
+  {
+    "id": 45,
+    "q": "Dự án bước vào giai đoạn cao điểm, nhóm hoạt động nhịp nhàng và đạt hiệu suất cao. Đây là giai đoạn nào?",
+    "o": [
+      "Hình thành",
+      "Chuẩn hóa",
+      "Thể hiện",
+      "Sóng gió"
+    ],
+    "c": 2,
+    "explanation": "Giai đoạn Thể hiện/Thực hiện (Performing) đạt đỉnh cao về năng suất, sự ăn ý và hiệu quả công việc."
+  },
+  {
+    "id": 46,
+    "q": "Dự án của nhóm đã hoàn thành, các thành viên chia tay và giải tán. Đây là giai đoạn nào?",
+    "o": [
+      "Chuẩn hóa",
+      "Hình thành",
+      "Thể hiện",
+      "Kết thúc"
+    ],
+    "c": 3,
+    "explanation": "Giai đoạn Kết thúc/Tan rã (Adjourning) diễn ra khi hoàn thành nhiệm vụ và giải tán nhóm."
+  },
+  {
+    "id": 47,
+    "q": "Trong quá trình làm việc nhóm, giai đoạn hình thành nhóm (Forming) là:",
+    "o": [
+      "Các thành viên làm quen và cân nhắc nhiệm vụ của mình",
+      "Các thành viên cạnh tranh vị trí và cố gắng giải quyết xung đột",
+      "Các thành viên tập trung năng lượng vào việc đạt được các mục tiêu của nhóm",
+      "Các thành viên giải quyết xung đột và phát triển “nội quy/quy chế nhóm”"
+    ],
+    "c": 0,
+    "explanation": "Ở bước Forming, thành viên tiếp xúc ban đầu, làm quen và hình dung về nhiệm vụ được giao."
+  },
+  {
+    "id": 48,
+    "q": "Trong quá trình làm việc nhóm, giai đoạn sóng gió (Storming) là:",
+    "o": [
+      "Các thành viên cạnh tranh vị trí và cố gắng giải quyết xung đột",
+      "Các thành viên làm quen và cân nhắc nhiệm vụ của mình",
+      "Các thành viên giải quyết xung đột và phát triển “theo nội quy/quy chế nhóm”",
+      "Các thành viên đạt được mục tiêu của nhóm và có thể bắt đầu tan rã"
+    ],
+    "c": 0,
+    "explanation": "Storming biểu hiện bằng sự xung đột cá tính, tranh giành ảnh hưởng và nỗ lực bộc lộ bản thân."
+  },
+  {
+    "id": 49,
+    "q": "Trong quá trình làm việc nhóm, giai đoạn chuẩn hóa (Norming) là:",
+    "o": [
+      "Các thành viên giải quyết xung đột và phát triển theo nội quy/quy chế nhóm",
+      "Các thành viên đạt được mục tiêu của nhóm và có thể bắt đầu tan rã",
+      "Các thành viên cạnh tranh vị trí và cố gắng giải quyết xung đột",
+      "Các thành viên làm quen và cân nhắc nhiệm vụ của mình"
+    ],
+    "c": 0,
+    "explanation": "Norming giải quyết được các bất đồng và thống nhất bộ quy tắc ứng xử, quy chế hoạt động."
+  },
+  {
+    "id": 50,
+    "q": "Trong quá trình làm việc nhóm, giai đoạn thể hiện (Performing) là:",
+    "o": [
+      "Các thành viên tập trung năng lượng vào việc đạt được các mục tiêu của nhóm",
+      "Các thành viên cạnh tranh vị trí và cố gắng giải quyết xung đột",
+      "Các thành viên làm quen và cân nhắc nhiệm vụ của mình",
+      "Các thành viên giải quyết xung đột và phát triển theo nội quy/quy chế nhóm"
+    ],
+    "c": 0,
+    "explanation": "Performing là giai đoạn dồn toàn bộ nguồn lực và năng lượng để hoàn thành mục tiêu dự án."
+  },
+  {
+    "id": 51,
+    "q": "Trong quá trình làm việc nhóm, giai đoạn kết thúc/điều chỉnh (Adjourning) là:",
+    "o": [
+      "Các thành viên đạt được mục tiêu của nhóm và có thể bắt đầu tan rã",
+      "Các thành viên cạnh tranh vị trí và cố gắng giải quyết xung đột",
+      "Các thành viên làm quen và cân nhắc nhiệm vụ của mình",
+      "Các thành viên giải quyết xung đột và phát triển theo nội quy/quy chế nhóm"
+    ],
+    "c": 0,
+    "explanation": "Adjourning tổng kết kết quả, nghiệm thu công việc và kết thúc sự tồn tại của nhóm."
+  },
+  {
+    "id": 52,
+    "q": "Trong quá trình làm việc nhóm, giai đoạn hình thành (Forming) là:",
+    "o": [
+      "Tập hợp các cá nhân khác biệt giống thời kỳ khởi đầu của quan hệ tình cảm xã hội",
+      "Công việc bắt đầu được triển khai một cách chậm chạp, đầy trắc trở...",
+      "Các mâu thuẫn và vấn đề đang tồn tại được dàn xếp và giải quyết",
+      "Đây là giai đoạn phát triển cao nhất của làm việc nhóm"
+    ],
+    "c": 0,
+    "explanation": "Slide bài giảng ví giai đoạn Forming giống như bước đầu tìm hiểu của một mối quan hệ xã hội."
+  },
+  {
+    "id": 53,
+    "q": "Trong quá trình làm việc nhóm, giai đoạn hình thành (Forming) là:",
+    "o": [
+      "Tâm lý thường háo hức, kỳ vọng, nghi ngờ, lo âu, rụt rè",
+      "Sự khác biệt về cá tính, cách làm việc... dẫn đến xung đột",
+      "Các chuẩn mực được hình thành và hoàn thiện",
+      "Giai đoạn hợp tác để thực hiện mục tiêu của nhóm"
+    ],
+    "c": 0,
+    "explanation": "Diễn biến tâm lý đặc trưng của giai đoạn mới lập nhóm là đan xen giữa háo hức, kỳ vọng với e ngại, lo âu."
+  },
+  {
+    "id": 54,
+    "q": "Điều quan trọng trong giai đoạn hình thành của làm việc nhóm là:",
+    "o": [
+      "Thúc đẩy các hoạt động giao tiếp để làm quen giữa các thành viên",
+      "Sẵn sàng va vào nhau khi bất mãn",
+      "Điều hòa những khác biệt",
+      "Cảm giác tin tưởng mạnh mẽ"
+    ],
+    "c": 0,
+    "explanation": "Nhóm trưởng cần tạo môi trường cởi mở để các thành viên tăng cường giao tiếp và rút ngắn khoảng cách."
+  },
+  {
+    "id": 55,
+    "q": "Trong quá trình làm việc nhóm, giai đoạn sóng gió thì:",
+    "o": [
+      "Công việc bắt đầu được triển khai một cách chậm chạp, đầy trắc trở, không khí làm việc trong nhóm trở nên căng thẳng, chất lượng công việc không cao",
+      "Sự xung đột về tính cách giảm dần",
+      "Mức độ cam kết về công việc cao",
+      "Tâm lý rụt rè"
+    ],
+    "c": 0,
+    "explanation": "Giai đoạn Storming công việc thường trắc trở, căng thẳng cao độ và tiến độ chậm chạp."
+  },
+  {
+    "id": 56,
+    "q": "Trong giai đoạn sóng gió, điều quan trọng là:",
+    "o": [
+      "Phải khuyến khích các thành viên tham gia để giải tỏa mâu thuẫn và sự khác biệt để họ cùng nhau thiết lập các nguyên tắc và cách thức làm việc",
+      "Thúc đẩy giao tiếp làm quen",
+      "Các chuẩn mực được hoàn thiện",
+      "Giải quyết vấn đề một cách chín chắn"
+    ],
+    "c": 0,
+    "explanation": "Để vượt qua Storming, nhóm phải đối diện trực tiếp với khác biệt để xây dựng nguyên tắc làm việc chung."
+  },
+  {
+    "id": 57,
+    "q": "Một thành viên nhóm sau khi học cách sử dụng phần mềm quản lý công việc đã áp dụng vào dự án thực tế, đồng thời điều chỉnh cách nhập dữ liệu để tiết kiệm thời gian cho cả nhóm. Hành động này thuộc bước nào?",
+    "o": [
+      "Learn",
+      "Apply",
+      "Master",
+      "Share"
+    ],
+    "c": 1,
+    "explanation": "Mang kiến thức ra thực hành thực tế và cải tiến cách làm biểu thị bước Áp dụng (Apply)."
+  },
+  {
+    "id": 58,
+    "q": "Sau 6 tháng liên tục tham gia dự án và giải quyết nhiều tình huống phức tạp, một nhân viên có thể xử lý các mâu thuẫn nhóm nhanh chóng, chính xác và ít mắc lỗi. Đây là minh chứng cho bước nào?",
+    "o": [
+      "Learn",
+      "Apply",
+      "Master",
+      "Share"
+    ],
+    "c": 2,
+    "explanation": "Khả năng phản ứng nhanh, chính xác và ít sai sót minh chứng người đó đã đạt trình độ Master (Mài sắc)."
+  },
+  {
+    "id": 59,
+    "q": "Tại cuộc họp công ty, một nhân viên chia sẻ bí quyết phối hợp giữa các phòng ban để hoàn thành dự án sớm hơn 2 tuần so với kế hoạch, đồng thời hướng dẫn cụ thể cách áp dụng cho các nhóm mới. Đây là bước nào?",
+    "o": [
+      "Learn",
+      "Apply",
+      "Master",
+      "Share"
+    ],
+    "c": 3,
+    "explanation": "Việc lan tỏa kinh nghiệm và hướng dẫn người khác áp dụng thành công thể hiện bước Sẻ chia (Share)."
+  },
+  {
+    "id": 60,
+    "q": "Trong một dự án Marketing, các thành viên thường xuyên trao đổi ý tưởng, phân công công việc rõ ràng và hỗ trợ nhau khi gặp khó khăn. Đây là ví dụ thể hiện rõ nhất yếu tố nào của kỹ năng làm việc nhóm?",
+    "o": [
+      "Cạnh tranh nội bộ để nâng cao hiệu suất",
+      "Hợp tác và tương tác hiệu quả",
+      "Chia sẻ tài nguyên cá nhân",
+      "Tự quản lý thời gian cá nhân"
+    ],
+    "c": 1,
+    "explanation": "Sự trao đổi, phân công và tương trợ thể hiện cốt lõi của khả năng \"Hợp tác và tương tác hiệu quả\"."
+  },
+  {
+    "id": 61,
+    "q": "Một nhóm kỹ sư đang thảo luận về thiết kế sản phẩm mới. Mỗi thành viên đều lắng nghe ý kiến người khác và xây dựng thêm ý tưởng dựa trên nội dung đã trao đổi. Hành vi này giúp nhóm đạt được điều gì?",
+    "o": [
+      "Giảm bớt sự sáng tạo để tránh mâu thuẫn",
+      "Đảm bảo tiến độ dự án dù bỏ qua ý kiến cá nhân",
+      "Đạt mục tiêu chung thông qua tương tác tích cực",
+      "Giảm chi phí họp nhóm"
+    ],
+    "c": 2,
+    "explanation": "Tương tác lắng nghe - đóng góp tích cực giúp cộng hưởng trí tuệ để đạt mục tiêu chung."
+  },
+  {
+    "id": 62,
+    "q": "Công ty X đang triển khai một dự án phát triển sản phẩm mới. Nhóm dự án gồm nhiều bộ phận phối hợp với nhau, từ R&D, Marketing, đến sản xuất. Sau 2 tháng, sản phẩm đạt tiến độ sớm hơn dự kiến. Nguyên nhân nào dưới đây hợp lý nhất?",
+    "o": [
+      "Nhóm có ít thành viên nên dễ quản lý hơn",
+      "Các thành viên phối hợp nhịp nhàng, phân chia công việc hợp lý, nâng cao hiệu suất",
+      "Nhóm không cần trao đổi nhiều, mỗi người tự làm phần việc của mình",
+      "Lãnh đạo giao hết việc cho một cá nhân giỏi nhất"
+    ],
+    "c": 1,
+    "explanation": "Tiến độ hoàn thành sớm là kết quả của sự phối hợp nhịp nhàng và phân công khoa học."
+  },
+  {
+    "id": 63,
+    "q": "Trong một cuộc họp định kỳ, Giám đốc cùng tham gia trao đổi với nhân viên các phòng ban về khó khăn trong công việc và cùng đề xuất giải pháp. Tác động tích cực nào sau đây có thể xảy ra?",
+    "o": [
+      "Giảm áp lực công việc cho lãnh đạo",
+      "Tăng sự gắn kết giữa lãnh đạo và nhân viên",
+      "Lãnh đạo ít phải ra quyết định hơn",
+      "Nhân viên sẽ tránh nêu ý kiến để tiết kiệm thời gian"
+    ],
+    "c": 1,
+    "explanation": "Lãnh đạo đối thoại cởi mở giúp thu hẹp khoảng cách và tăng cường sự gắn kết tổ chức."
+  },
+  {
+    "id": 64,
+    "q": "Một nhóm Marketing đang cùng nhau nghĩ ra thật nhiều ý tưởng cho chiến dịch quảng cáo. Nhờ sự đóng góp ý tưởng đa dạng, nhóm chọn được kế hoạch thu hút được cả khách hàng trẻ và trung niên. Trường hợp này thể hiện lợi ích nào của làm việc nhóm?",
+    "o": [
+      "Tiết kiệm ngân sách",
+      "Lựa chọn được những phương án tối ưu nhờ tổng hợp nhiều ý tưởng",
+      "Giảm số lượng người tham gia để dễ quản lý",
+      "Loại bỏ hoàn toàn rủi ro trong dự án"
+    ],
+    "c": 1,
+    "explanation": "Sức mạnh trí tuệ tập thể tạo ra nhiều phương án đa dạng để chọn ra giải pháp tối ưu nhất."
+  },
+  {
+    "id": 65,
+    "q": "Công ty Y yêu cầu tất cả các nhóm dự án phải tuân thủ quy trình báo cáo tiến độ hàng tuần, họp định kỳ, và tuân thủ thời gian làm việc chung. Quy định này chủ yếu nhằm:",
+    "o": [
+      "Hạn chế sáng tạo của nhân viên",
+      "Đảm bảo môi trường làm việc có kỷ luật, giúp dự án đi đúng hướng",
+      "Giảm thời gian họp để tăng năng suất",
+      "Tạo áp lực khiến nhân viên làm nhanh hơn"
+    ],
+    "c": 1,
+    "explanation": "Kỷ luật và quy trình báo cáo thống nhất giữ cho dự án đi đúng lộ trình đề ra."
+  },
+  {
+    "id": 66,
+    "q": "Một nhóm kỹ sư được giao nhiệm vụ sửa chữa hệ thống máy móc hỏng hóc nghiêm trọng. Nhờ sự phối hợp tốt, họ hoàn thành sửa chữa trước hạn và tiết kiệm 15% chi phí cho công ty. Điều này cho thấy làm việc nhóm đã:",
+    "o": [
+      "Tăng tính cạnh tranh cá nhân giữa các thành viên",
+      "Giảm sự gắn kết giữa lãnh đạo và nhân viên",
+      "Hạn chế việc chia sẻ ý tưởng",
+      "Giúp nâng cao hiệu suất và mang lại lợi ích kinh tế"
+    ],
+    "c": 3,
+    "explanation": "Rút ngắn thời gian và tiết kiệm chi phí là bằng chứng của hiệu suất cao và giá trị kinh tế mà nhóm mang lại."
+  },
+  {
+    "id": 67,
+    "q": "Lan thường cảm thấy áp lực khi phải chuẩn bị bài thuyết trình cá nhân. Khi tham gia nhóm học tập, Lan thấy nhẹ nhàng hơn vì có thể chia nhỏ công việc và cùng nhau hỗ trợ. Đây là ưu điểm nào của làm việc nhóm trong học tập?",
+    "o": [
+      "Phát triển kỹ năng",
+      "Giảm áp lực học một mình",
+      "Xây dựng quan hệ tốt",
+      "Tăng tính cạnh tranh"
+    ],
+    "c": 1,
+    "explanation": "Việc chia sẻ trách nhiệm và hỗ trợ lẫn nhau làm giảm áp lực tâm lý so với khi làm việc đơn độc."
+  },
+  {
+    "id": 68,
+    "q": "Một nhóm sinh viên cùng nhau làm đề tài nghiên cứu, mỗi người phụ trách một phần và chia sẻ kiến thức cho nhau. Kết quả, cả nhóm đạt điểm cao và hiểu bài sâu hơn. Tình huống này thể hiện ưu điểm nào?",
+    "o": [
+      "Giảm áp lực học một mình",
+      "Hiệu quả học tập tốt hơn",
+      "Tăng khả năng tự học",
+      "Giảm thời gian học"
+    ],
+    "c": 1,
+    "explanation": "Điểm số cao và mức độ hiểu bài sâu chứng minh hiệu quả học tập được cải thiện rõ rệt."
+  },
+  {
+    "id": 69,
+    "q": "Trong quá trình chuẩn bị cho kỳ thi, Minh học hỏi được kỹ năng lập kế hoạch, phân chia thời gian và kỹ năng giao tiếp khi làm việc với nhóm. Đây là minh chứng cho ưu điểm nào?",
+    "o": [
+      "Phát triển kỹ năng",
+      "Xây dựng quan hệ tốt",
+      "Giảm áp lực học một mình",
+      "Tiết kiệm chi phí học tập"
+    ],
+    "c": 0,
+    "explanation": "Việc tích lũy thêm các kỹ năng giao tiếp, quản lý thời gian chính là giá trị phát triển kỹ năng từ làm việc nhóm."
+  },
+  {
+    "id": 70,
+    "q": "Nhờ làm việc nhóm thường xuyên, Hùng và các bạn trở nên thân thiết, hỗ trợ nhau cả trong học tập lẫn cuộc sống. Ưu điểm nào được thể hiện ở tình huống này?",
+    "o": [
+      "Hiệu quả học tập tốt hơn",
+      "Giảm áp lực học một mình",
+      "Phát triển kỹ năng",
+      "Xây dựng được quan hệ tốt"
+    ],
+    "c": 3,
+    "explanation": "Sự thân thiết và tương trợ trong cuộc sống phản ánh ưu điểm xây dựng mối quan hệ xã hội tích cực."
+  },
+  {
+    "id": 71,
+    "q": "Khi làm bài tập nhóm, mỗi thành viên chia sẻ kiến thức và cùng nhau giải quyết vấn đề khó. Nhờ vậy, nhóm không chỉ hiểu bài hơn mà còn có động lực học tập cao hơn. Đây là sự kết hợp của những ưu điểm nào?",
+    "o": [
+      "Giảm áp lực học một mình & Hiệu quả học tập tốt hơn",
+      "Phát triển kỹ năng & Xây dựng quan hệ tốt",
+      "Hiệu quả học tập tốt hơn & Tăng khả năng sáng tạo",
+      "Giảm áp lực học một mình & Tăng khả năng tự học"
+    ],
+    "c": 0,
+    "explanation": "Động lực tăng (giảm áp lực) cùng việc hiểu bài sâu hơn (hiệu quả cao) là sự kết hợp của hai ưu điểm này."
+  },
+  {
+    "id": 72,
+    "q": "Nhóm của Lan mất nhiều buổi họp chỉ để thống nhất ý tưởng, khiến tiến độ dự án bị chậm. Đây là nhược điểm nào của làm việc nhóm?",
+    "o": [
+      "Tiềm ẩn những xung đột",
+      "Vấn đề về con người",
+      "Tốn thời gian, năng lượng và các nguồn lực",
+      "Không có tính sáng tạo"
+    ],
+    "c": 2,
+    "explanation": "Việc họp hành kéo dài làm chậm tiến độ là biểu hiện trực tiếp của việc tiêu tốn thời gian và năng lượng."
+  },
+  {
+    "id": 73,
+    "q": "Trong một cuộc họp nhóm, Minh và Hùng bất đồng quan điểm gay gắt về cách triển khai, dẫn đến tranh cãi kéo dài. Đây là ví dụ của nhược điểm nào trong quá trình làm việc nhóm?",
+    "o": [
+      "Tiềm ẩn những xung đột",
+      "Tốn thời gian, năng lượng và các nguồn lực",
+      "Vấn đề về con người",
+      "Không kiểm soát được tiến độ"
+    ],
+    "c": 0,
+    "explanation": "Tranh cãi gay gắt xuất phát từ sự bất đồng quan điểm minh họa cho nguy cơ tiềm ẩn xung đột nội bộ."
+  },
+  {
+    "id": 74,
+    "q": "Một thành viên trong nhóm của Hoa thường xuyên không hoàn thành nhiệm vụ đúng hạn, ảnh hưởng đến cả nhóm. Đây thuộc nhược điểm nào của làm việc nhóm?",
+    "o": [
+      "Tăng tinh thần đoàn kết",
+      "Vấn đề về con người, liên quan đến trách nhiệm, thái độ hoặc năng lực cá nhân",
+      "Tiết kiệm thời gian, năng lượng và các nguồn lực",
+      "Giảm tinh thần làm việc nhóm"
+    ],
+    "c": 1,
+    "explanation": "Sự chậm trễ do cá nhân thiếu ý thức/năng lực thuộc nhóm nhược điểm về \"Vấn đề con người\"."
+  },
+  {
+    "id": 75,
+    "q": "Để hoàn thành một báo cáo, nhóm của Nam phải tổ chức nhiều cuộc họp, tốn tiền in ấn tài liệu và thời gian đi lại. Nhược điểm nào đang được thể hiện?",
+    "o": [
+      "Vấn đề về con người",
+      "Tiềm ẩn những xung đột",
+      "Tốn thời gian, năng lượng và các nguồn lực",
+      "Thiếu kỹ năng lãnh đạo"
+    ],
+    "c": 2,
+    "explanation": "Tốn chi phí in ấn, thời gian di chuyển và nhiều buổi họp phản ánh rõ tổn thất nguồn lực."
+  },
+  {
+    "id": 76,
+    "q": "Trong quá trình làm dự án, một số thành viên không hợp tác, tạo áp lực cho người khác, dẫn đến bầu không khí căng thẳng và mất đoàn kết. Đây là sự kết hợp của những nhược điểm nào trong quá trình làm việc nhóm?",
+    "o": [
+      "Tốn thời gian & Tiềm ẩn xung đột",
+      "Vấn đề về con người & Tiềm ẩn những xung đột",
+      "Vấn đề về con người & Tốn nguồn lực",
+      "Tốn thời gian & Vấn đề về con người"
+    ],
+    "c": 1,
+    "explanation": "Thành viên không hợp tác (Vấn đề con người) gây ra căng thẳng, mất đoàn kết (Tiềm ẩn xung đột)."
+  },
+  {
+    "id": 77,
+    "q": "Bạn là trưởng nhóm dự án. Để đảm bảo nhóm hoàn thành mục tiêu đúng tiến độ và chất lượng, hành động nào dưới đây thể hiện đúng nhất kỹ năng điều hành?",
+    "o": [
+      "Chỉ giao nhiệm vụ và yêu cầu báo cáo kết quả cuối cùng",
+      "Phân công rõ ràng, hướng dẫn cách thực hiện, đảm bảo đủ nguồn lực cho các thành viên",
+      "Cho phép các thành viên tự làm theo ý mình, không cần theo kế hoạch",
+      "Chỉ tập trung giám sát mà không hỗ trợ nhóm"
+    ],
+    "c": 1,
+    "explanation": "Kỹ năng điều hành đòi hỏi phân công công việc cụ thể, hỗ trợ phương pháp và cấp đủ nguồn lực thi hành."
+  },
+  {
+    "id": 78,
+    "q": "Trong buổi họp nhóm, trưởng nhóm nhắc lại định hướng chung của dự án và giải thích vì sao nhóm cần tuân thủ quy trình làm việc đã thống nhất. Đây là ví dụ về:",
+    "o": [
+      "Lập kế hoạch",
+      "Điều hành hoạt động",
+      "Đánh giá kết quả",
+      "Phân tích rủi ro"
+    ],
+    "c": 1,
+    "explanation": "Định hướng và duy trì kỷ luật quy trình thuộc các tác động điều hành nhóm trong quá trình thực thi."
+  },
+  {
+    "id": 79,
+    "q": "Một nhóm làm việc bị trì hoãn do thiếu thiết bị. Nếu bạn là người điều hành, bước xử lý phù hợp nhất là:",
+    "o": [
+      "Phê bình thành viên ngay lập tức",
+      "Yêu cầu nhóm tự tìm cách khắc phục",
+      "Cung cấp thiết bị cần thiết và điều chỉnh phân công để đảm bảo tiến độ",
+      "Tạm dừng toàn bộ dự án đến khi đủ thiết bị"
+    ],
+    "c": 2,
+    "explanation": "Trưởng nhóm có trách nhiệm tháo gỡ rào cản tài nguyên, cấp đủ thiết bị để đưa dự án trở lại đúng nhịp độ."
+  },
+  {
+    "id": 80,
+    "q": "Trong một dự án triển khai hệ thống phần mềm mới, nhóm bạn liên tục bị chậm tiến độ vì các thành viên chưa hiểu rõ quy trình. Là người điều hành, giải pháp hiệu quả nhất là:",
+    "o": [
+      "Gia hạn thêm thời gian để nhóm tự tìm hiểu",
+      "Tổ chức buổi hướng dẫn chi tiết, phân công lại nhiệm vụ và cung cấp tài liệu quy trình",
+      "Giao toàn bộ phần việc khó cho một người có kinh nghiệm nhất",
+      "Tạm dừng dự án để lập lại kế hoạch từ đầu"
+    ],
+    "c": 1,
+    "explanation": "Đào tạo, làm rõ quy trình và tái phân công là giải pháp điều hành tận gốc cho sự thiếu sót về năng lực/thông tin."
+  },
+  {
+    "id": 81,
+    "q": "Trong buổi họp tuần, trưởng nhóm nhắc lại mục tiêu, theo dõi tiến độ từng thành viên và phân bổ lại nguồn lực cho những phần việc gấp. Hoạt động này thể hiện:",
+    "o": [
+      "Lập kế hoạch chiến lược",
+      "Kỹ năng điều hành",
+      "Giám sát thụ động",
+      "Phân tích rủi ro"
+    ],
+    "c": 1,
+    "explanation": "Theo sát tiến độ và linh hoạt tái điều phối nguồn lực là biểu hiện sống động của kỹ năng điều hành nhóm."
+  },
+  {
+    "id": 82,
+    "q": "Theo quan điểm của Max Weber, yếu tố nào sau đây không nằm trong các đặc điểm tâm lý cá nhân quan trọng để điều hành nhóm hiệu quả?",
+    "o": [
+      "Nhận thức",
+      "Nhu cầu",
+      "Thu nhập",
+      "Cá tính"
+    ],
+    "c": 2,
+    "explanation": "Trong lý thuyết điều hành nhóm dựa trên tâm lý cá nhân, các yếu tố được xem xét là Nhận thức, Nhu cầu, Cá tính, Tình cảm (không bao gồm Thu nhập)."
+  },
+  {
+    "id": 83,
+    "q": "Trong một nhóm làm việc, để các thành viên phối hợp ăn ý, trưởng nhóm cần làm gì trước tiên?",
+    "o": [
+      "Xây dựng kế hoạch chi tiết cho dự án",
+      "Hiểu rõ các đặc điểm tâm lý cá nhân của từng thành viên",
+      "Chia việc theo kinh nghiệm cá nhân",
+      "Tăng ngân sách cho nhóm"
+    ],
+    "c": 1,
+    "explanation": "Đọc vị tâm lý và cá tính thành viên là bước tiên quyết để bố trí vai trò và cách ứng xử phù hợp."
+  },
+  {
+    "id": 84,
+    "q": "Một nhóm thường xuyên xảy ra mâu thuẫn do các thành viên chưa hiểu nhau. Giải pháp theo nội dung bài học là:",
+    "o": [
+      "Thay đổi toàn bộ nhân sự",
+      "Tổ chức các hoạt động giúp hiểu rõ nhận thức, nhu cầu, tính khí và tình cảm của nhau",
+      "Giảm số lượng thành viên để dễ quản lý hơn",
+      "Yêu cầu mọi người tuân thủ tuyệt đối mệnh lệnh trưởng nhóm"
+    ],
+    "c": 1,
+    "explanation": "Thấu hiểu tâm lý cá nhân giúp giải tỏa nguy cơ xung đột từ sự dị biệt văn hóa/tính cách."
+  },
+  {
+    "id": 85,
+    "q": "Khi các thành viên đã thấu hiểu đặc điểm tâm lý của nhau, kết quả đạt được là:",
+    "o": [
+      "Giảm thời gian họp",
+      "Phối hợp hiệu quả hơn và nâng cao kết quả làm việc nhóm",
+      "Không cần kế hoạch chi tiết nữa",
+      "Tự động phân chia công việc"
+    ],
+    "c": 1,
+    "explanation": "Sự thấu hiểu đồng cảm là chất keo giúp các mắt xích phối hợp nhịp nhàng, tối ưu hóa năng suất."
+  },
+  {
+    "id": 86,
+    "q": "Trong một nhóm dự án công nghệ, trưởng nhóm muốn tăng hiệu quả hợp tác giữa các thành viên. Theo nội dung bài học, bước quan trọng nhất cần thực hiện đầu tiên là gì?",
+    "o": [
+      "Phân chia công việc dựa trên năng lực chuyên môn",
+      "Hiểu rõ đặc điểm tâm lý cá nhân của từng thành viên",
+      "Thiết lập thời gian biểu làm việc chung",
+      "Giảm số lượng thành viên để dễ quản lý"
+    ],
+    "c": 1,
+    "explanation": "Thấu hiểu tâm lý cá nhân luôn là bước nền tảng được ưu tiên hàng đầu theo lý thuyết quản trị nhóm."
+  },
+  {
+    "id": 87,
+    "q": "Theo Max Weber, yếu tố nào sau đây không thuộc đặc điểm tâm lý cá nhân quan trọng trong điều hành nhóm?",
+    "o": [
+      "Cá tính",
+      "Tình cảm",
+      "Thu nhập",
+      "Nhận thức"
+    ],
+    "c": 2,
+    "explanation": "Tương tự câu 82, Thu nhập là yếu tố kinh tế bên ngoài, không thuộc đặc tính tâm lý cá nhân."
+  },
+  {
+    "id": 88,
+    "q": "Trong một buổi họp, nhóm thường xuyên xảy ra tranh luận gay gắt khiến tiến độ bị chậm. Biện pháp phù hợp nhất theo lý thuyết là:",
+    "o": [
+      "Yêu cầu mọi thành viên ghi lại ý kiến thay vì phát biểu",
+      "Tổ chức hoạt động giúp mọi người hiểu nhu cầu, nhận thức, tính khí và tình cảm của nhau",
+      "Cắt giảm bớt khối lượng công việc",
+      "Thay đổi địa điểm làm việc"
+    ],
+    "c": 1,
+    "explanation": "Xung đột tranh luận gay gắt xử lý tốt nhất bằng việc xây dựng sự thấu hiểu tâm lý giữa các thành viên."
+  },
+  {
+    "id": 89,
+    "q": "Khi các thành viên nhóm đã thấu hiểu đặc điểm tâm lý của nhau, kết quả thực tế đạt được là:",
+    "o": [
+      "Phối hợp nhịp nhàng, nâng cao hiệu quả làm việc",
+      "Không cần họp nhóm định kỳ",
+      "Trưởng nhóm có thể giảm khối lượng giám sát",
+      "Mỗi thành viên làm việc hoàn toàn độc lập"
+    ],
+    "c": 0,
+    "explanation": "Sự ăn ý tâm lý tạo ra sự phối hợp mượt mà và gia tăng chất lượng công việc."
+  },
+  {
+    "id": 90,
+    "q": "Trong phong cách độc đoán, ai là người quyết định mục đích và phương thức làm việc?",
+    "o": [
+      "Cả nhóm quyết định",
+      "Trưởng nhóm và các thành viên cùng thảo luận",
+      "Trưởng nhóm quyết định",
+      "Trưởng nhóm đề xuất, thành viên biểu quyết"
+    ],
+    "c": 2,
+    "explanation": "Phong cách độc đoán (Autocratic) đặc trưng bởi việc lãnh đạo tập trung toàn bộ quyền quyết định vào tay mình."
+  },
+  {
+    "id": 91,
+    "q": "Phong cách độc đoán dễ gây ra điều gì trong nhóm?",
+    "o": [
+      "Sự đồng thuận và hợp tác",
+      "Tinh thần trách nhiệm cao",
+      "Chủ nghĩa cá nhân, ganh đua, ngờ vực lẫn nhau",
+      "Sự sáng tạo và đổi mới"
+    ],
+    "c": 2,
+    "explanation": "Hạn chế lớn nhất của sự độc đoán là triệt tiêu sự tin tưởng, tạo môi trường ganh đua, ngờ vực."
+  },
+  {
+    "id": 92,
+    "q": "Ưu điểm của phong cách độc đoán là gì?",
+    "o": [
+      "Gây dựng tinh thần đồng đội bền vững",
+      "Nhóm nhanh triển khai công việc và đạt hiệu quả",
+      "Mọi người có quyền phát biểu tự do",
+      "Tránh được các xung đột nội bộ"
+    ],
+    "c": 1,
+    "explanation": "Quyết định nhanh từ trên xuống giúp phong cách này phản ứng tốc độ trong các tình huống khẩn cấp."
+  },
+  {
+    "id": 93,
+    "q": "Trong phong cách cộng tác, trưởng nhóm đóng vai trò gì?",
+    "o": [
+      "Người đưa ra quyết định cuối cùng mà không hỏi ý kiến",
+      "Người đề xuất các phương án để nhóm cùng bàn bạc",
+      "Người chỉ nghe theo ý kiến số đông",
+      "Người giữ vai trò quan sát, không tham gia vào nhóm"
+    ],
+    "c": 1,
+    "explanation": "Lãnh đạo cộng tác đóng vai trò người điều phối, gợi mở và thúc đẩy thảo luận tập thể."
+  },
+  {
+    "id": 94,
+    "q": "Nhược điểm chính của phong cách cộng tác là gì?",
+    "o": [
+      "Thiếu tính linh hoạt khi triển khai công việc",
+      "Dễ gây mất đoàn kết nhóm",
+      "Mất nhiều thời gian cho thảo luận, bàn bạc",
+      "Thiếu mục tiêu rõ ràng"
+    ],
+    "c": 2,
+    "explanation": "Do cần sự đồng thuận của nhiều người, phong cách dân chủ/cộng tác tốn nhiều thời gian hội họp."
+  },
+  {
+    "id": 95,
+    "q": "Phong cách cộng tác phù hợp khi nào?",
+    "o": [
+      "Khi nhóm cần giải quyết công việc gấp rút",
+      "Khi cần phát triển thủ lĩnh mới",
+      "Khi cần sự hài lòng và hợp tác của các thành viên",
+      "Khi nhóm không có người lãnh đạo"
+    ],
+    "c": 2,
+    "explanation": "Khi mục tiêu dự án đòi hỏi tính cam kết cao và sự hài lòng đồng thuận của nhân sự, phong cách cộng tác là tối ưu."
+  },
+  {
+    "id": 96,
+    "q": "Trong phong cách tự do, điều gì dễ xảy ra?",
+    "o": [
+      "Các thành viên chủ động hỗ trợ trưởng nhóm",
+      "Xuất hiện các thủ lĩnh tự phát và giảm uy tín của trưởng nhóm",
+      "Công việc được triển khai nhanh chóng và hiệu quả",
+      "Trưởng nhóm kiểm soát chặt chẽ công việc"
+    ],
+    "c": 1,
+    "explanation": "Sự buông lỏng của trưởng nhóm trong phong cách tự do (Laissez-faire) dễ dẫn đến rối loạn quyền lực và xuất hiện thủ lĩnh tự phát."
+  },
+  {
+    "id": 97,
+    "q": "Nguyên nhân chính khiến phong cách tự do dễ thất bại là:",
+    "o": [
+      "Nhóm không có khả năng tự tổ chức, né tránh công việc",
+      "Trưởng nhóm quá can thiệp vào công việc",
+      "Thành viên không được phát biểu",
+      "Thiếu ngân sách và tài nguyên"
+    ],
+    "c": 0,
+    "explanation": "Nếu nhân viên thiếu tính tự giác và năng lực tự quản, phong cách tự do sẽ biến thành sự bỏ mặc vô trách nhiệm."
+  },
+  {
+    "id": 98,
+    "q": "Khi nào nên lựa chọn phong cách điều hành phù hợp?",
+    "o": [
+      "Khi nhóm làm việc lâu dài với nhau",
+      "Dựa vào sở thích cá nhân của trưởng nhóm",
+      "Dựa vào từng giai đoạn, tính chất và mức độ khẩn cấp của công việc",
+      "Khi nhóm không có ai chịu trách nhiệm"
+    ],
+    "c": 2,
+    "explanation": "Không có phong cách tốt nhất, chỉ có phong cách phù hợp nhất với hoàn cảnh, tính chất nhiệm vụ và đặc điểm nhân sự."
+  },
+  {
+    "id": 99,
+    "q": "Trong 3 phong cách điều hành, có phong cách điều hành nào là tối ưu tuyệt đối không?",
+    "o": [
+      "Có, đó là phong cách cộng tác",
+      "Không, chỉ có phong cách phù hợp",
+      "Có, phong cách độc đoán trong mọi tình huống",
+      "Có, phong cách tự do khi nhóm trưởng yếu"
+    ],
+    "c": 1,
+    "explanation": "Lãnh đạo linh hoạt theo tình huống (Situational Leadership) khẳng định tính linh hoạt, không thần thánh hóa một phong cách đơn lẻ."
+  },
+  {
+    "id": 100,
+    "q": "Trong phong cách độc đoán, thông tin và chỉ đạo công việc chủ yếu theo hướng nào?",
+    "o": [
+      "Từ dưới lên",
+      "Hai chiều",
+      "Từ trên xuống",
+      "Theo ý kiến nhóm trưởng lẫn thành viên"
+    ],
+    "c": 2,
+    "explanation": "Luồng thông tin trong quản trị độc đoán là mệnh lệnh 1 chiều từ trên áp xuống."
+  },
+  {
+    "id": 101,
+    "q": "Ưu điểm nổi bật của phong cách độc đoán là gì?",
+    "o": [
+      "Tăng sự hợp tác",
+      "Triển khai công việc nhanh và hiệu quả",
+      "Ít gây mâu thuẫn nội bộ",
+      "Các thành viên được thể hiện sáng kiến"
+    ],
+    "c": 1,
+    "explanation": "Sự tập trung quyền lực giúp tiết kiệm thời gian ra quyết định và phản ứng nhanh."
+  },
+  {
+    "id": 102,
+    "q": "Phong cách cộng tác có đặc điểm nổi bật nào sau đây?",
+    "o": [
+      "Trưởng nhóm quyết định mọi thứ",
+      "Thành viên không tham gia vào quyết định",
+      "Mọi thành viên tham gia thảo luận, thống nhất trước khi thực hiện",
+      "Không cần phân công rõ ràng"
+    ],
+    "c": 2,
+    "explanation": "Nguyên tắc của phong cách cộng tác là mở rộng thảo luận để đạt sự thống nhất tập thể."
+  },
+  {
+    "id": 103,
+    "q": "Nhược điểm chính của phong cách cộng tác là gì?",
+    "o": [
+      "Dễ tạo mâu thuẫn cá nhân",
+      "Tốn thời gian cho thảo luận",
+      "Giảm hiệu quả chung",
+      "Thành viên không được phát biểu"
+    ],
+    "c": 1,
+    "explanation": "Chi phí thời gian họp bàn chính là nhược điểm rõ nhất của cộng tác."
+  },
+  {
+    "id": 104,
+    "q": "Trong phong cách tự do, vấn đề nào dễ xảy ra nhất?",
+    "o": [
+      "Mâu thuẫn giữa trưởng nhóm và cấp trên",
+      "Công việc triển khai nhanh",
+      "Không có sự phối hợp, dễ phát sinh xung đột",
+      "Nhóm tự chủ động nhưng vẫn có tổ chức"
+    ],
+    "c": 2,
+    "explanation": "Thiếu sự điều phối của lãnh đạo làm các cá nhân hoạt động tự phát, dễ đụng độ và thiếu gắn kết."
+  },
+  {
+    "id": 105,
+    "q": "Trong trường hợp cần xử lý một dự án cấp bách trong thời gian ngắn, phong cách lãnh đạo nào là phù hợp nhất?",
+    "o": [
+      "Cộng tác",
+      "Tự do",
+      "Độc đoán",
+      "Luân phiên giữa các thành viên"
+    ],
+    "c": 2,
+    "explanation": "Tình huống khủng hoảng, khẩn cấp đòi hỏi mệnh lệnh nhanh gọn của phong cách độc đoán."
+  },
+  {
+    "id": 106,
+    "q": "Một nhóm làm việc có thời gian dài cùng nhau, có sự tin tưởng lẫn nhau và công việc không quá khẩn cấp. Phong cách lãnh đạo nên áp dụng là gì?",
+    "o": [
+      "Độc đoán",
+      "Cộng tác",
+      "Tự do",
+      "Luân phiên"
+    ],
+    "c": 1,
+    "explanation": "Môi trường tin cậy, làm việc lâu dài và không chịu áp lực thời gian cực đoan rất thích hợp với phong cách cộng tác."
+  },
+  {
+    "id": 107,
+    "q": "Nếu trưởng nhóm không đưa ra định hướng, không phân công rõ ràng và để nhóm tự điều hành, điều gì có thể xảy ra?",
+    "o": [
+      "Nhóm gắn kết hơn",
+      "Nhóm có tinh thần chủ động cao",
+      "Xuất hiện thủ lĩnh tự phát, làm giảm uy tín trưởng nhóm",
+      "Công việc hoàn thành đúng tiến độ"
+    ],
+    "c": 2,
+    "explanation": "Khoảng trống quyền lực do sự buông thả tạo điều kiện cho các thủ lĩnh tự phát trỗi dậy."
+  },
+  {
+    "id": 108,
+    "q": "Trong mô hình 5M, yếu tố \"Model Leadership Behavior\" có nghĩa là gì?",
+    "o": [
+      "Tổ chức nhóm",
+      "Đưa ra kiểu mẫu lãnh đạo",
+      "Lắng nghe ý kiến nhóm",
+      "Đào tạo kỹ năng chuyên môn"
+    ],
+    "c": 1,
+    "explanation": "\"Model Leadership Behavior\" nghĩa là lãnh đạo bằng việc làm gương, đưa ra kiểu mẫu hành vi chuẩn mực."
+  },
+  {
+    "id": 109,
+    "q": "Vai trò của người Mentor Members trong nhóm là:",
+    "o": [
+      "Chỉ huy nhóm",
+      "Làm mẫu hành vi lãnh đạo",
+      "Cố vấn, hỗ trợ thành viên khác",
+      "Giao nhiệm vụ cụ thể"
+    ],
+    "c": 2,
+    "explanation": "Mentor có nghĩa là người cố vấn, hướng dẫn và dìu dắt các thành viên khác nâng cao năng lực."
+  },
+  {
+    "id": 110,
+    "q": "Lỗi nào sau đây có thể làm giảm mạnh hiệu quả thuyết trình?",
+    "o": [
+      "Sử dụng nhiều màu sắc trong slide",
+      "Phát âm rõ nhưng ít dùng ngôn ngữ hình thể",
+      "Không điều chỉnh tốc độ nói theo phản ứng người nghe",
+      "Có ví dụ minh họa trong bài nói"
+    ],
+    "c": 2,
+    "explanation": "Thiếu sự tương tác và không nhạy bén điều chỉnh giọng nói theo phản ứng khán giả làm mất kết nối khi thuyết trình."
+  },
+  {
+    "id": 111,
+    "q": "Việc sử dụng ánh mắt trong thuyết trình nên được thực hiện như thế nào?",
+    "o": [
+      "Chỉ nhìn vào một người nghe duy nhất",
+      "Nhìn xuống slide hoặc tài liệu thường xuyên",
+      "Bao quát khán phòng bằng ánh nhìn tự nhiên",
+      "Tránh tiếp xúc ánh mắt để giảm hồi hộp"
+    ],
+    "c": 2,
+    "explanation": "Ánh mắt giao lưu tự nhiên bao quát toàn bộ hội trường tạo sự tôn trọng và thu hút người nghe."
+  },
+  {
+    "id": 112,
+    "q": "Khi sử dụng PowerPoint hoặc Google Slides trong thuyết trình, nguyên tắc quan trọng nhất là:",
+    "o": [
+      "Dùng càng nhiều hiệu ứng chuyển cảnh càng tốt",
+      "Trình bày nhiều thông tin chữ trên mỗi slide",
+      "Slide hỗ trợ người nói, không thay thế phần trình bày miệng",
+      "Chỉ cần slide đẹp, không cần chuẩn bị bài thuyết trình"
+    ],
+    "c": 2,
+    "explanation": "Slide đóng vai trò công cụ trực quan hỗ trợ, tâm điểm thuyết trình vẫn là bản thân diễn giả và thông điệp lời nói."
+  },
+  {
+    "id": 113,
+    "q": "Mục đích chính của việc họp nhóm là gì?",
+    "o": [
+      "Tổ chức các hoạt động vui chơi",
+      "Chia sẻ khó khăn, giải quyết vấn đề, phát triển nhóm",
+      "Tạo ra mâu thuẫn để tranh luận",
+      "Tăng số lượng thành viên"
+    ],
+    "c": 1,
+    "explanation": "Cuộc họp nhóm được thiết kế để trao đổi thông tin, tháo gỡ vướng mắc và thúc đẩy tiến độ chung."
+  },
+  {
+    "id": 114,
+    "q": "Hình thức họp nhóm trực tiếp thường áp dụng khi nào?",
+    "o": [
+      "Khi chỉ cần chia sẻ thông tin",
+      "Khi đưa ra quyết định quan trọng",
+      "Khi không thể gặp mặt",
+      "Khi muốn tiết kiệm chi phí"
+    ],
+    "c": 1,
+    "explanation": "Họp trực tiếp mặt-đối-mặt giúp nắm bắt trọn vẹn cảm xúc, tăng sự tin tưởng để chốt các quyết định quan trọng."
+  },
+  {
+    "id": 115,
+    "q": "Ai chịu trách nhiệm điều hành và dẫn dắt nội dung cuộc họp?",
+    "o": [
+      "Thư ký",
+      "Thành viên nhóm",
+      "Chủ tọa",
+      "Người quan sát"
+    ],
+    "c": 2,
+    "explanation": "Chủ tọa (Chairperson) là người điều phối, duy trì nghị trình và dẫn dắt toàn bộ buổi họp."
+  },
+  {
+    "id": 116,
+    "q": "Biên bản họp nhóm là gì?",
+    "o": [
+      "Danh sách thành viên tham gia",
+      "Văn bản ghi lại nội dung và diễn biến cuộc họp",
+      "Lịch họp nhóm",
+      "Tài liệu tuyên truyền"
+    ],
+    "c": 1,
+    "explanation": "Biên bản cuộc họp là tài liệu chính thức lưu trữ các thảo luận, quyết định và phân công công việc."
+  },
+  {
+    "id": 117,
+    "q": "Khi họp nhằm giải quyết vấn đề, số lượng người tham gia nên:",
+    "o": [
+      "Càng đông càng tốt",
+      "Hạn chế để tập trung",
+      "Không quan trọng",
+      "Chỉ có lãnh đạo"
+    ],
+    "c": 1,
+    "explanation": "Họp giải quyết vấn đề cần quy mô gọn gàng, gồm các nhân sự trực tiếp liên quan để đạt sự tập trung cao."
+  },
+  {
+    "id": 118,
+    "q": "Một nhân tố phá hỏng cuộc họp là:",
+    "o": [
+      "Nói đúng chủ đề",
+      "Chốt vấn đề kịp thời",
+      "Nói quá nhiều, lan man",
+      "Chuẩn bị tài liệu đầy đủ"
+    ],
+    "c": 2,
+    "explanation": "Việc phát biểu lan man, cướp diễn đàn gây ức chế và làm chệch hướng mục tiêu cuộc họp."
+  },
+  {
+    "id": 119,
+    "q": "Công tác hậu cần trong chuẩn bị cuộc họp không bao gồm:",
+    "o": [
+      "Tài liệu liên quan",
+      "Giấy bút",
+      "Chuẩn bị bảng trắng",
+      "Tuyển thêm thành viên"
+    ],
+    "c": 3,
+    "explanation": "Tuyển dụng nhân sự là công tác tổ chức dài hạn, không nằm trong danh mục hậu cần buổi họp."
+  },
+  {
+    "id": 120,
+    "q": "Cuộc họp nhằm phổ biến thông tin giúp:",
+    "o": [
+      "Chia sẻ thông tin và điều phối hoạt động",
+      "Chỉ dành cho ban lãnh đạo",
+      "Tránh mọi tranh luận",
+      "Tăng chi phí vận hành"
+    ],
+    "c": 0,
+    "explanation": "Mục đích của họp phổ biến thông tin là lan tỏa định hướng và đồng bộ hoạt động giữa các mắt xích."
+  },
+  {
+    "id": 121,
+    "q": "Sau cuộc họp cần làm gì?",
+    "o": [
+      "Gửi biên bản cho mọi người",
+      "Bỏ qua nội dung họp",
+      "Họp lại ngay lập tức",
+      "Thay đổi nhóm trưởng"
+    ],
+    "c": 0,
+    "explanation": "Bước theo dõi sau họp quan trọng nhất là ban hành biên bản cuộc họp tới các bên liên quan để theo dõi cam kết."
+  },
+  {
+    "id": 122,
+    "q": "Khi họp gián tiếp, công cụ nào sau đây không phù hợp?",
+    "o": [
+      "Skype",
+      "Forum",
+      "Email",
+      "Giấy báo tường"
+    ],
+    "c": 3,
+    "explanation": "Giấy báo tường là kênh truyền thông nội bộ tĩnh truyền thống, không thể dùng làm công cụ họp gián tiếp."
+  },
+  {
+    "id": 123,
+    "q": "Lý do cần gửi trước chương trình cuộc họp cho các thành viên là:",
+    "o": [
+      "Để thành viên chuẩn bị và tham gia hiệu quả hơn",
+      "Để tăng số lượng người tham gia",
+      "Để tiết kiệm thời gian đặt phòng họp",
+      "Để giảm chi phí in ấn"
+    ],
+    "c": 0,
+    "explanation": "Nắm trước Agenda giúp các thành viên nghiên cứu tài liệu và chuẩn bị ý kiến đóng góp chất lượng."
+  },
+  {
+    "id": 124,
+    "q": "Nếu một vấn đề được bàn quá lâu, hậu quả thường là:",
+    "o": [
+      "Thành viên hứng thú hơn",
+      "Cuộc họp sôi nổi hơn",
+      "Thành viên mệt mỏi, chán nản",
+      "Chủ tọa dễ điều hành hơn"
+    ],
+    "c": 2,
+    "explanation": "Tranh luận sa lầy quá lâu mà không chốt được giải pháp gây kiệt sức và chán nản cho người dự."
+  },
+  {
+    "id": 125,
+    "q": "Khi một thành viên không hoàn thành công việc sau cuộc họp, tác động tiêu cực là:",
+    "o": [
+      "Không ảnh hưởng nhiều",
+      "Làm chậm hoạt động nhóm",
+      "Tạo thêm ý tưởng mới",
+      "Giúp rút kinh nghiệm"
+    ],
+    "c": 1,
+    "explanation": "Một mắt xích bị vỡ đứt tiến độ sẽ gây ra hiệu ứng dây chuyền làm trễ kế hoạch chung của nhóm."
+  },
+  {
+    "id": 126,
+    "q": "Vai trò nào trong cuộc họp cần ghi chép đầy đủ, chính xác diễn biến cuộc họp?",
+    "o": [
+      "Chủ tọa",
+      "Thư ký",
+      "Thành viên",
+      "Người phản biện"
+    ],
+    "c": 1,
+    "explanation": "Thư ký buổi họp chịu trách nhiệm ghi chép biên bản trung thực, đầy đủ."
+  },
+  {
+    "id": 127,
+    "q": "Trong một cuộc họp giải quyết xung đột, cách tốt nhất để hạn chế mâu thuẫn cá nhân là:",
+    "o": [
+      "Tránh đề cập vấn đề",
+      "Tập trung vào nội dung, không công kích cá nhân",
+      "Tăng số lượng người tham gia",
+      "Để mọi người tự do tranh luận không giới hạn"
+    ],
+    "c": 1,
+    "explanation": "Nguyên tắc vàng trong tranh luận tích cực: \"Cứng rắn với vấn đề, mềm mỏng với con người\" (Tập trung công việc, không công kích cá nhân)."
+  },
+  {
+    "id": 128,
+    "q": "Nếu bạn là chủ tọa và nhận thấy cuộc họp đang đi lệch chủ đề, bạn nên:",
+    "o": [
+      "Tiếp tục để mọi người trao đổi thoải mái",
+      "Tạm dừng và hướng lại đúng chủ đề",
+      "Hoãn họp sang hôm khác",
+      "Chuyển sang chủ đề mới hoàn toàn"
+    ],
+    "c": 1,
+    "explanation": "Chủ tọa phải thực thi quyền điều hướng để kéo sự tập trung trở lại Agenda ban đầu."
+  },
+  {
+    "id": 129,
+    "q": "Khi tổ chức họp dài trên 3 giờ, biện pháp giúp duy trì hiệu quả là:",
+    "o": [
+      "Không nghỉ giải lao để tiết kiệm thời gian",
+      "Bố trí nghỉ giải lao và tiệc trà hợp lý",
+      "Rút ngắn phần thảo luận",
+      "Chỉ mời ít người tham gia"
+    ],
+    "c": 1,
+    "explanation": "Bố trí Tea-break hợp lý giúp tái tạo năng lượng và khả năng tập trung cho người tham dự."
+  },
+  {
+    "id": 130,
+    "q": "Họp là một hình thức:",
+    "o": [
+      "Thuyết trình, giao tiếp",
+      "Giao tiếp, phản biện",
+      "Phản biện, thuyết trình, ca hát",
+      "Thuyết trình, giao tiếp, phản biện"
+    ],
+    "c": 3,
+    "explanation": "Bản chất cuộc họp là sự tổng hòa của giao tiếp đa chiều, trình bày ý tưởng (thuyết trình) và tranh luận xây dựng (phản biện)."
+  },
+  {
+    "id": 131,
+    "q": "Người điều hành cuộc họp là:",
+    "o": [
+      "Chủ tọa",
+      "Thư ký",
+      "Những người tham gia cuộc họp",
+      "Giám đốc"
+    ],
+    "c": 0,
+    "explanation": "Chủ tọa giữ vai trò người cầm mịch và điều hành diễn biến cuộc họp."
+  },
+  {
+    "id": 132,
+    "q": "Mâu thuẫn, xung đột thường bắt nguồn từ:",
+    "o": [
+      "Tình bạn lâu dài",
+      "Quan điểm và lợi ích khác nhau",
+      "Sự đồng thuận trong nhóm",
+      "Hoạt động vui chơi chung"
+    ],
+    "c": 1,
+    "explanation": "Sự dị biệt về góc nhìn, nhận thức và sự đối lập về lợi ích là nguyên nhân sâu xa sinh ra mâu thuẫn."
+  },
+  {
+    "id": 133,
+    "q": "Một trong các kỹ năng quan trọng khi giải quyết mâu thuẫn là:",
+    "o": [
+      "Phớt lờ cảm xúc đối phương",
+      "Lắng nghe và hiểu nhu cầu các bên",
+      "Ép buộc bên kia đồng thuận",
+      "Tránh né mọi xung đột"
+    ],
+    "c": 1,
+    "explanation": "Lắng nghe thấu cảm để tìm ra nhu cầu thực sự ẩn sau mâu thuẫn là chìa khóa tháo gỡ xung đột."
+  },
+  {
+    "id": 134,
+    "q": "Trong nhóm, mâu thuẫn về nhiệm vụ thường liên quan đến:",
+    "o": [
+      "Cảm xúc cá nhân",
+      "Tính cách trái ngược",
+      "Ý tưởng, nội dung công việc",
+      "Mối quan hệ bên ngoài"
+    ],
+    "c": 2,
+    "explanation": "Xung đột nhiệm vụ (Task conflict) xoay quanh các bất đồng về giải pháp, ý tưởng và phương pháp làm việc."
+  },
+  {
+    "id": 135,
+    "q": "Khi gặp xung đột, phương pháp 5 Whys giúp:",
+    "o": [
+      "Tìm kiếm lý do cảm xúc",
+      "Lôi kéo người khác đứng về phía mình",
+      "Xác định nguyên nhân gốc rễ",
+      "Phê bình đối phương"
+    ],
+    "c": 2,
+    "explanation": "Kỹ thuật \"5 lần tại sao\" (5 Whys) truy vết liên tục để bóc tách tìm ra nguyên nhân cốt lõi của vấn đề."
+  },
+  {
+    "id": 136,
+    "q": "Phương pháp hợp tác trong giải quyết xung đột ưu tiên:",
+    "o": [
+      "Cạnh tranh và áp đặt",
+      "Né tránh vấn đề",
+      "Sự thỏa hiệp và đồng thuận",
+      "Quyết định một chiều từ cấp trên"
+    ],
+    "c": 2,
+    "explanation": "Phong cách hợp tác tìm kiếm giải pháp Win-Win thỏa mãn lợi ích của các bên dựa trên sự đồng thuận."
+  },
+  {
+    "id": 137,
+    "q": "Người có xu hướng né tránh mâu thuẫn thường:",
+    "o": [
+      "Chủ động tranh luận",
+      "Không ngại đối đầu",
+      "Tránh làm tổn thương người khác",
+      "Gay gắt và chỉ trích"
+    ],
+    "c": 2,
+    "explanation": "Động cơ của người né tránh thường là nỗi sợ va chạm, sợ phá hỏng mối quan hệ hoặc làm tổn thương người khác."
+  },
+  {
+    "id": 138,
+    "q": "Khi sử dụng phương pháp nhượng bộ, mục tiêu chính là:",
+    "o": [
+      "Bảo vệ quyền lợi cá nhân",
+      "Tạo ra mâu thuẫn mới",
+      "Giữ gìn mối quan hệ",
+      "Gây áp lực lên đối phương"
+    ],
+    "c": 2,
+    "explanation": "Nhượng bộ (Accommodating) hy sinh lợi ích cá nhân ngắn hạn nhằm mục đích cao nhất là bảo vệ mối quan hệ."
+  },
+  {
+    "id": 139,
+    "q": "Phương pháp thỏa hiệp thường được dùng khi:",
+    "o": [
+      "Các bên đều không chịu nhường nhịn",
+      "Có thời gian dài để thảo luận",
+      "Cần giải quyết nhanh và đôi bên chấp nhận mất một phần lợi ích",
+      "Một bên muốn thắng hoàn toàn"
+    ],
+    "c": 2,
+    "explanation": "Thỏa hiệp (Compromising) là phương án cắt gọt lợi ích mỗi bên một ít để nhanh chóng đạt thỏa thuận chung."
+  },
+  {
+    "id": 140,
+    "q": "Khi nào thì giao tiếp bằng văn bản - ngôn ngữ viết phù hợp hơn giao tiếp bằng ngôn ngữ nói?",
+    "o": [
+      "Khi bạn muốn đưa ra nhiều câu hỏi",
+      "Khi bạn muốn nhanh chóng nhận được ý kiến trả lời về một vấn đề",
+      "Khi bạn muốn trình bày một ý tưởng phức tạp",
+      "Khi bạn muốn tránh nói chuyện với ai đó"
+    ],
+    "c": 2,
+    "explanation": "Văn bản viết giúp hệ thống hóa các logic phức tạp, cho phép người đọc nghiên cứu kỹ lưỡng và lưu trữ làm bằng chứng."
+  },
+  {
+    "id": 141,
+    "q": "Cách tốt nhất để kiểm tra xem thông tin có được hiểu đúng nghĩa không là:",
+    "o": [
+      "Quan sát ngôn ngữ cơ thể của người nghe",
+      "Đặt các câu hỏi mở cho người nghe",
+      "Hỏi người nghe xem họ có hiểu bạn không",
+      "Chỉ khi nào người nghe đặt câu hỏi, bạn mới biết họ hiểu bạn"
+    ],
+    "c": 1,
+    "explanation": "Câu hỏi mở yêu cầu người nghe tự diễn đạt lại thông điệp theo cách hiểu của họ, giúp kiểm tra độ chính xác của phản hồi."
+  },
+  {
+    "id": 142,
+    "q": "Khi giao tiếp với nhau, theo bạn những yếu tố nào sau đây ảnh hưởng lớn nhất đến sự sai lệch của thông điệp truyền tải?",
+    "o": [
+      "Tiếng ồn khi giao tiếp",
+      "Tâm trạng khi giao tiếp",
+      "Sự khác biệt về ngôn ngữ và văn hóa",
+      "Thiếu tự tin khi giao tiếp"
+    ],
+    "c": 2,
+    "explanation": "Rào cản ngôn ngữ và giải mã văn hóa là bộ lọc dễ gây ra sự bóp méo và hiểu nhầm thông điệp sâu sắc nhất."
+  },
+  {
+    "id": 143,
+    "q": "Theo bạn, kỹ năng giao tiếp tốt sẽ quyết định bao nhiêu sự thành công của bạn trong công việc và cuộc sống?",
+    "o": [
+      "20%",
+      "50%",
+      "85%",
+      "70%"
+    ],
+    "c": 2,
+    "explanation": "Nghiên cứu quản trị kinh điển (như Viện Carnegie) chỉ ra kỹ năng mềm và giao tiếp đóng góp đến 85% vào sự thành công."
+  },
+  {
+    "id": 144,
+    "q": "Trong quá trình giao tiếp, bạn có bao nhiêu thời gian để gây ấn tượng tốt cho người khác?",
+    "o": [
+      "30 giây",
+      "1 phút",
+      "2 phút",
+      "5 phút"
+    ],
+    "c": 0,
+    "explanation": "Ấn tượng ban đầu (First Impression) được hình thành rất nhanh chóng, thường chỉ trong vòng 30 giây đầu tiên."
+  },
+  {
+    "id": 145,
+    "q": "Yếu tố nào sau đây không ảnh hưởng đến quá trình giao dịch trực tiếp với khách hàng, đối tác giao tiếp với bạn?",
+    "o": [
+      "Giọng nói",
+      "Cách lựa chọn từ ngữ",
+      "Cú pháp",
+      "Điệu bộ"
+    ],
+    "c": 2,
+    "explanation": "Trong giao tiếp nói trực tiếp, giọng nói, từ ngữ và ngôn ngữ cơ thể (điệu bộ) quyết định cảm xúc; cú pháp ngữ pháp chuyên sâu không phải yếu tố chi phối trực tiếp."
+  },
+  {
+    "id": 146,
+    "q": "Trong một buổi họp chủ tọa không nên?",
+    "o": [
+      "Tập trung ghi lại những gì diễn ra, không nên quan sát thái độ, cử chỉ của mọi người",
+      "Khuyến khích mọi người tham dự cuộc họp phát biểu ý kiến",
+      "Hỏi lại để làm sáng rõ các phát biểu...",
+      "Làm rõ ý kiến đóng góp"
+    ],
+    "c": 0,
+    "explanation": "Việc ghi chép chi tiết là nhiệm vụ của Thư ký. Chủ tọa phải tập trung quan sát hội trường, điều phối không khí và bao quát diễn biến."
+  },
+  {
+    "id": 147,
+    "q": "Tại sao việc đưa ra ý kiến và phản hồi lại trong giao tiếp là quan trọng?",
+    "o": [
+      "Giúp người nghe tham gia vào giao tiếp chấp thuận hoặc bác bỏ thông điệp",
+      "Nó cho phép người nghe xác định được thông điệp rõ ràng hơn",
+      "Người nghe cần con số chính xác",
+      "Giúp người nói kiểm tra xem việc lắng nghe"
+    ],
+    "c": 1,
+    "explanation": "Phản hồi khép kín chu trình giao tiếp 2 chiều, đảm bảo người nhận hiểu rõ và chính xác thông điệp được truyền đi."
+  },
+  {
+    "id": 148,
+    "q": "Khái niệm “kế hoạch” được hiểu là gì?",
+    "o": [
+      "Một bản báo cáo chi tiết về kết quả công việc",
+      "Tập hợp những hoạt động, công việc sắp xếp theo trình tự nhất định để đạt mục tiêu",
+      "Một danh sách các công việc chưa được sắp xếp",
+      "Tập hợp ý tưởng ngẫu nhiên của nhóm"
+    ],
+    "c": 1,
+    "explanation": "Kế hoạch là lộ trình hành động có cấu trúc và thứ tự logic nhằm chinh phục mục tiêu xác định."
+  },
+  {
+    "id": 149,
+    "q": "Lập kế hoạch là quá trình gì?",
+    "o": [
+      "Sắp xếp nhân sự cho nhóm",
+      "Ấn định mục tiêu và xác định biện pháp tốt nhất để đạt mục tiêu",
+      "Xác định ngân sách của tổ chức",
+      "Tìm kiếm khách hàng tiềm năng"
+    ],
+    "c": 1,
+    "explanation": "Bản chất của lập kế hoạch bao gồm việc đặt ra mục tiêu và lựa chọn con đường/phương pháp tối ưu để hoàn thành."
+  },
+  {
+    "id": 150,
+    "q": "Một trong những vai trò quan trọng của lập kế hoạch là:",
+    "o": [
+      "Giúp nhóm tránh hoàn toàn mọi thay đổi từ môi trường bên ngoài",
+      "Giúp nhóm tập trung và phối hợp mọi nguồn lực hiệu quả hơn",
+      "Đảm bảo nhóm luôn hoạt động mà không cần quản lý",
+      "Loại bỏ hoàn toàn mọi rủi ro trong hoạt động"
+    ],
+    "c": 1,
+    "explanation": "Lập kế hoạch giúp tập trung năng lượng, tối ưu hóa sự phối hợp và sử dụng hiệu quả tài nguyên."
+  },
+  {
+    "id": 151,
+    "q": "Lập kế hoạch gắn liền với công cụ và phương pháp quản lý nhằm mục đích gì?",
+    "o": [
+      "Tối giản quy trình làm việc",
+      "Đảm bảo kế hoạch được triển khai đúng hướng",
+      "Tăng tốc độ làm việc của nhóm",
+      "Giảm chi phí nhân sự"
+    ],
+    "c": 1,
+    "explanation": "Các công cụ quản lý đi kèm giúp kiểm soát và đảm bảo việc thực thi không chệch khỏi mục tiêu."
+  },
+  {
+    "id": 152,
+    "q": "Tại sao lập kế hoạch giúp nhóm dễ dàng ứng phó với thay đổi của môi trường bên ngoài?",
+    "o": [
+      "Vì kế hoạch giúp nhóm dự đoán trước và chuẩn bị các phương án phù hợp",
+      "Vì kế hoạch giúp loại bỏ hoàn toàn tác động từ bên ngoài",
+      "Vì lập kế hoạch giúp nhóm thay đổi mục tiêu liên tục",
+      "Vì lập kế hoạch chỉ tập trung vào nguồn lực bên trong nhóm"
+    ],
+    "c": 0,
+    "explanation": "Quá trình lập kế hoạch đi kèm dự báo rủi ro, từ đó xây dựng kịch bản ứng phó linh hoạt."
+  },
+  {
+    "id": 153,
+    "q": "Nguyên tắc tổ chức nhóm làm việc yêu cầu tập trung vào điều nào sau đây?",
+    "o": [
+      "Chỉ giao việc cho lãnh đạo nhóm",
+      "Tập trung truyền đạt nhiệm vụ, có thể linh hoạt ủy nhiệm công việc khi cần",
+      "Chỉ làm việc theo cảm hứng",
+      "Không thay đổi kế hoạch ban đầu"
+    ],
+    "c": 1,
+    "explanation": "Tổ chức hiệu quả đòi hỏi giao quyền linh hoạt và truyền tải nhiệm vụ thông suốt."
+  },
+  {
+    "id": 154,
+    "q": "Trong công tác tổ chức nhóm, “điều hành” có nghĩa là:",
+    "o": [
+      "Giao nhiệm vụ và không cần theo dõi",
+      "Tự làm thay cho nhóm",
+      "Phối hợp để thực hiện nhiệm vụ",
+      "Chỉ quan sát và không tham gia"
+    ],
+    "c": 2,
+    "explanation": "Điều hành trong tổ chức là sự liên kết và phối hợp các nỗ lực cá nhân thành sức mạnh tổng hợp."
+  },
+  {
+    "id": 155,
+    "q": "Một yếu tố khách quan hoặc chủ quan có thể dẫn đến thất bại của nhóm là:",
+    "o": [
+      "Lắng nghe ý kiến đa chiều",
+      "Không quan tâm đến công việc",
+      "Có mục tiêu rõ ràng",
+      "Phân công nhiệm vụ hợp lý"
+    ],
+    "c": 1,
+    "explanation": "Thái độ thờ ơ, thiếu trách nhiệm đối với công việc chung là nguyên nhân hàng đầu dẫn đến thất bại."
+  },
+  {
+    "id": 156,
+    "q": "Khi một thành viên luôn cố gắng bảo vệ ý kiến của mình, không chấp nhận ý kiến khác, yếu tố gây trở ngại này gọi là:",
+    "o": [
+      "Thiếu trách nhiệm",
+      "Ngại va chạm",
+      "Không quan tâm đến công việc",
+      "Không lắng nghe ý kiến khác"
+    ],
+    "c": 3,
+    "explanation": "Thái độ bảo thủ và từ chối tiếp thu phản biện chính là biểu hiện của việc \"Không lắng nghe ý kiến khác\"."
+  },
+  {
+    "id": 157,
+    "q": "Trong tình huống nhóm bạn đang thực hiện một dự án, một thành viên từ chối mọi ý tưởng khác với ý của mình, bạn nên làm gì để giải quyết?",
+    "o": [
+      "Tránh tranh luận để giữ hòa khí",
+      "Tổ chức buổi trao đổi, khuyến khích phản biện mang tính xây dựng",
+      "Báo cáo ngay với cấp trên để thay thành viên",
+      "Bỏ qua ý kiến của thành viên đó"
+    ],
+    "c": 1,
+    "explanation": "Giải pháp tích cực nhất là tạo diễn đàn phản biện văn minh dựa trên dẫn chứng khách quan để thuyết phục cá nhân bảo thủ."
+  },
+  {
+    "id": 158,
+    "q": "Công tác tổ chức nhóm làm việc không bao gồm hoạt động nào sau đây?",
+    "o": [
+      "Hoạch định kế hoạch",
+      "Tổ chức thực hiện nhiệm vụ",
+      "Kiểm soát việc thực hiện nhiệm vụ",
+      "Tuyển dụng nhân sự mới"
+    ],
+    "c": 3,
+    "explanation": "Công tác tổ chức nhóm tập trung vào Hoạch định - Thực hiện - Kiểm soát nhiệm vụ; việc tuyển dụng nhân sự mới là chức năng quản trị nhân sự của tổ chức."
+  },
+  {
+    "id": 159,
+    "q": "Trong nhóm, việc phân công “đúng người, đúng việc” nhằm mục đích:",
+    "o": [
+      "Tối đa hóa thời gian làm việc cá nhân",
+      "Phát huy ưu điểm, khắc phục nhược điểm",
+      "Giảm áp lực công việc cho lãnh đạo",
+      "Tăng tốc độ hoàn thành bằng mọi giá"
+    ],
+    "c": 1,
+    "explanation": "\"Đúng người đúng việc\" giúp khai thác tối đa thế mạnh cá nhân và hạn chế những lỗ hổng kỹ năng."
+  },
+  {
+    "id": 160,
+    "q": "Nếu một nhóm thường xuyên xảy ra mâu thuẫn do “ngại va chạm”, nghĩa là:",
+    "o": [
+      "Thành viên không muốn trao đổi vì sợ xung đột",
+      "Thành viên tranh cãi gay gắt",
+      "Thành viên phản đối mọi ý kiến",
+      "Thành viên không tham gia họp nhóm"
+    ],
+    "c": 0,
+    "explanation": "\"Ngại va chạm\" chỉ tâm lý đùn đẩy, né tránh tranh luận vì sợ làm mất lòng hoặc sinh ra xung đột."
+  },
+  {
+    "id": 161,
+    "q": "Trong một nhóm dự án, có thành viên thường xuyên bỏ bê công việc vì cho rằng “Không liên quan tới mình”. Đây là biểu hiện của:",
+    "o": [
+      "Không quan tâm đến công việc",
+      "Ngại va chạm",
+      "Không lắng nghe ý kiến khác",
+      "Có trách nhiệm"
+    ],
+    "c": 0,
+    "explanation": "Tư duy \"không liên quan tới mình\" phản ánh sự thờ ơ và không quan tâm tới sứ mệnh chung của nhóm."
+  },
+  {
+    "id": 162,
+    "q": "Thái độ cầu thị trong nhóm thể hiện rõ nhất ở hành động nào?",
+    "o": [
+      "Luôn bảo vệ ý kiến của mình đến cùng",
+      "Chỉ lắng nghe khi người nói có cùng quan điểm",
+      "Lắng nghe, phân tích và tôn trọng ý kiến của người khác",
+      "Tránh nghe các ý kiến trái chiều để giữ hòa khí"
+    ],
+    "c": 2,
+    "explanation": "Cầu thị là tinh thần khiêm tốn, sẵn sàng lắng nghe, phân tích và học hỏi từ phản biện của đồng đội."
+  },
+  {
+    "id": 163,
+    "q": "Khi góp ý trong nhóm, người đưa ra ý kiến cần:",
+    "o": [
+      "Thẳng thắn nhưng dùng lời lẽ mềm mại, tế nhị",
+      "Phê phán trực tiếp điểm yếu của người khác",
+      "Chỉ ra lỗi sai mà không cần giải pháp",
+      "Góp ý ngắn gọn để tiết kiệm thời gian"
+    ],
+    "c": 0,
+    "explanation": "Tác phong góp ý chuẩn mực: Chân thành, thẳng thắn về nội dung nhưng tinh tế, tế nhị trong từ ngữ."
+  },
+  {
+    "id": 164,
+    "q": "Thái độ tôn trọng trong nhóm được thể hiện qua:",
+    "o": [
+      "Chỉ lắng nghe nhưng không cần phản hồi",
+      "Động viên, hỗ trợ và xem xét ý tưởng của nhau",
+      "Chấp nhận mọi ý kiến mà không phân tích",
+      "Không tranh luận để tránh mâu thuẫn"
+    ],
+    "c": 1,
+    "explanation": "Tôn trọng thể hiện qua việc nghiêm túc lắng nghe, cân nhắc và khích lệ các đóng góp trí tuệ của thành viên."
+  },
+  {
+    "id": 165,
+    "q": "Một thành viên trong nhóm phản đối ý kiến của bạn nhưng lập luận hợp lý. Bạn nên:",
+    "o": [
+      "Giữ nguyên quan điểm và bỏ qua ý kiến của họ",
+      "Phân tích lý lẽ của họ và điều chỉnh quan điểm nếu cần",
+      "Tranh cãi đến khi người đó đồng ý",
+      "Chuyển sang chủ đề khác để tránh căng thẳng"
+    ],
+    "c": 1,
+    "explanation": "Tinh thần làm việc nhóm văn minh là tôn trọng lý lẽ đúng đắn và sẵn sàng điều chỉnh vì mục tiêu chung."
+  },
+  {
+    "id": 166,
+    "q": "Trong tình huống nhóm đang tranh luận căng thẳng, bạn muốn góp ý nhưng sợ gây tranh cãi. Thái độ đúng là:",
+    "o": [
+      "Im lặng để không ai khó chịu",
+      "Góp ý trực tiếp, chỉ ra điểm yếu để mọi người thấy vấn đề",
+      "Đưa ra ý kiến xây dựng bằng lời lẽ khéo léo, tránh công kích cá nhân",
+      "Chờ đến khi cuộc họp kết thúc mới góp ý riêng với trưởng nhóm"
+    ],
+    "c": 2,
+    "explanation": "Không chọn im lặng hay công kích, giải pháp đúng là đóng góp mang tính xây dựng với thái độ khéo léo."
+  },
+  {
+    "id": 167,
+    "q": "Tinh thần đồng đội trong nhóm được phát huy tốt nhất khi:",
+    "o": [
+      "Mỗi người chỉ làm việc theo lĩnh vực mình giỏi",
+      "Thành viên hỗ trợ nhau, sẵn sàng chia sẻ kiến thức ở nhiều lĩnh vực",
+      "Các thành viên cạnh tranh để chứng tỏ năng lực",
+      "Mọi người chỉ tập trung vào nhiệm vụ cá nhân"
+    ],
+    "c": 1,
+    "explanation": "Tinh thần đồng đội thể hiện ở sự san sẻ, gánh vác công việc và sẵn sàng hỗ trợ đồng đội lúc khó khăn."
+  },
+  {
+    "id": 168,
+    "q": "Khi thuyết phục người khác đồng ý với ý kiến của mình, điều quan trọng nhất là:",
+    "o": [
+      "Dựa vào lý lẽ cá nhân để chứng minh mình đúng",
+      "Dựa vào ý kiến chung, làm cho chúng hợp lý hơn",
+      "Dùng vị trí hoặc tài năng của mình để buộc người khác nghe",
+      "Chỉ đưa ra ý kiến mà không cần giải thích"
+    ],
+    "c": 1,
+    "explanation": "Thuyết phục hiệu quả trong nhóm là biết kết nối ý tưởng cá nhân với mục tiêu chung và lợi ích tập thể."
+  },
+  {
+    "id": 169,
+    "q": "Trong nguyên tắc SMART, chữ S đại diện cho yếu tố nào?",
+    "o": [
+      "Systematic (Hệ thống)",
+      "Specific (Cụ thể)",
+      "Scientific (Khoa học)",
+      "Standard (Tiêu chuẩn)"
+    ],
+    "c": 1,
+    "explanation": "Trong mô hình đặt mục tiêu SMART: S = Specific (Cụ thể, rõ ràng)."
+  },
+  {
+    "id": 170,
+    "q": "Trong nguyên tắc SMART, chữ M đại diện cho yếu tố nào?",
+    "o": [
+      "Measurable (Đo lường được)",
+      "Meaningful (Ý nghĩa)",
+      "Modern (Hiện đại)",
+      "Methodical (Phương pháp)"
+    ],
+    "c": 0,
+    "explanation": "M = Measurable (Đo lường được bằng định lượng/số liệu)."
+  },
+  {
+    "id": 171,
+    "q": "Trong nguyên tắc SMART, chữ A đại diện cho yếu tố nào?",
+    "o": [
+      "Achievable (Khả thi / Có thể đạt được)",
+      "Advanced (Nâng cao)",
+      "Accurate (Chính xác)",
+      "Action (Hành động)"
+    ],
+    "c": 0,
+    "explanation": "A = Achievable / Attainable (Khả thi, thực tế có thể hoàn thành)."
+  },
+  {
+    "id": 172,
+    "q": "Trong nguyên tắc SMART, chữ R đại diện cho yếu tố nào?",
+    "o": [
+      "Relevant / Realistic (Thực tế / Phù hợp)",
+      "Rapid (Nhanh chóng)",
+      "Reliable (Đáng tin cậy)",
+      "Rational (Hợp lý)"
+    ],
+    "c": 0,
+    "explanation": "R = Relevant / Realistic (Thực tế, có liên quan tới sứ mệnh chung)."
+  },
+  {
+    "id": 173,
+    "q": "Trong nguyên tắc SMART, chữ T đại diện cho yếu tố nào?",
+    "o": [
+      "Time-bound / Timely (Có thời hạn xác định)",
+      "Total (Tổng thể)",
+      "Technical (Kỹ thuật)",
+      "Transparent (Minh bạch)"
+    ],
+    "c": 0,
+    "explanation": "T = Time-bound / Timely (Có khung thời gian hoàn thành rõ ràng)."
+  },
+  {
+    "id": 174,
+    "q": "Mẫu công cụ lập kế hoạch tiến độ trực quan bằng biểu đồ thanh phổ biến nhất là:",
+    "o": [
+      "Sơ đồ Pareto",
+      "Sơ đồ Gantt (Gantt Chart)",
+      "Sơ đồ Ishikawa",
+      "Ma trận SWOT"
+    ],
+    "c": 1,
+    "explanation": "Sơ đồ Gantt là công cụ lập và quản lý tiến độ dự án trực quan hàng đầu."
+  },
+  {
+    "id": 175,
+    "q": "Phương pháp sơ đồ GANTT được áp dụng hiệu quả nhất trong:",
+    "o": [
+      "Phân tích tài chính",
+      "Quản lý và theo dõi tiến độ dự án",
+      "Tuyển dụng nhân sự",
+      "Đánh giá sự hài lòng khách hàng"
+    ],
+    "c": 1,
+    "explanation": "Công dụng chính của sơ đồ Gantt là theo dõi lịch trình, thời hạn và tiến độ công việc."
+  },
+  {
+    "id": 176,
+    "q": "Phương pháp sơ đồ GANTT được tiến hành qua mấy bước?",
+    "o": [
+      "4 bước",
+      "5 bước",
+      "6 bước",
+      "7 bước"
+    ],
+    "c": 2,
+    "explanation": "Theo giáo trình, quy trình xây dựng sơ đồ Gantt gồm 6 bước tiêu chuẩn."
+  },
+  {
+    "id": 177,
+    "q": "Trong các bước lập sơ đồ Gantt, bước “Sắp xếp trình tự thực hiện công việc một cách hợp lý” là:",
+    "o": [
+      "Bước 1",
+      "Bước 2",
+      "Bước 3",
+      "Bước 4"
+    ],
+    "c": 1,
+    "explanation": "Sau khi liệt kê công việc ở Bước 1, Bước 2 là sắp xếp trình tự phụ thuộc giữa các công việc."
+  },
+  {
+    "id": 178,
+    "q": "Trong các bước lập sơ đồ Gantt, bước “Xác định thời gian thực hiện dự tính của từng công việc một cách hợp lý” là:",
+    "o": [
+      "Bước 1",
+      "Bước 2",
+      "Bước 3",
+      "Bước 4"
+    ],
+    "c": 2,
+    "explanation": "Bước 3 trong lập sơ đồ Gantt là ước lượng khoảng thời gian cho từng hạng mục."
+  },
+  {
+    "id": 179,
+    "q": "Hạn chế/Nhược điểm của sơ đồ Gantt là gì?",
+    "o": [
+      "Dễ vẽ và dễ hiểu",
+      "Thích hợp cho dự án nhỏ",
+      "Trong những dự án lớn gồm nhiều công việc, không chỉ ra đủ và đúng sự tương tác và mối quan hệ phức tạp giữa các công việc",
+      "Không thể theo dõi tiến độ"
+    ],
+    "c": 2,
+    "explanation": "Với các siêu dự án quá phức tạp, Gantt tỏ ra hạn chế trong việc thể hiện mạng lưới quan hệ phụ thuộc chéo so với sơ đồ PERT."
+  },
+  {
+    "id": 180,
+    "q": "Phương pháp sơ đồ GANTT được tiến hành qua một số bước, trong đó bước “Quyết định thời điểm bắt đầu và kết thúc” là:",
+    "o": [
+      "Bước 1",
+      "Bước 2",
+      "Bước 3",
+      "Bước 4"
+    ],
+    "c": 3,
+    "explanation": "Theo quy trình 6 bước lập sơ đồ GANTT, bước 4 chính là xác định và quyết định thời điểm bắt đầu và kết thúc cho từng công việc."
+  },
+  {
+    "id": 181,
+    "q": "Phương pháp sơ đồ GANTT được tiến hành qua một số bước, trong đó bước “Xây dựng bảng phân tích công việc” là:",
+    "o": [
+      "Bước 3",
+      "Bước 4",
+      "Bước 5",
+      "Bước 6"
+    ],
+    "c": 2,
+    "explanation": "Bước 5 trong quy trình lập sơ đồ GANTT là xây dựng bảng phân tích công việc với các công việc đã được mã hóa."
+  },
+  {
+    "id": 182,
+    "q": "Phương pháp sơ đồ GANTT được tiến hành qua một số bước, trong đó bước “Vẽ sơ đồ GANTT của dự án” là:",
+    "o": [
+      "Bước 4",
+      "Bước 5",
+      "Bước 6",
+      "Bước 7"
+    ],
+    "c": 2,
+    "explanation": "Bước 6 (bước cuối cùng trong quy trình) là trực tiếp vẽ sơ đồ GANTT của dự án với trục tung thể hiện trình tự công việc và trục hoành thể hiện thời gian."
+  },
+  {
+    "id": 183,
+    "q": "Theo cấu trúc của sơ đồ GANTT thì:",
+    "o": [
+      "Các công việc được thể hiện trên trục tung",
+      "Các công việc được thể hiện trên trục hoành",
+      "Thời gian được thể hiện trên trục tung",
+      "Tỷ lệ xích trên trục tung và trục hoành bằng nhau"
+    ],
+    "c": 0,
+    "explanation": "Cấu trúc chuẩn của sơ đồ GANTT quy định trục tung trình bày danh mục các công việc, trục hoành thể hiện thời gian thực hiện."
+  },
+  {
+    "id": 184,
+    "q": "Theo cấu trúc của sơ đồ GANTT thì:",
+    "o": [
+      "Các công việc được thể hiện trên trục hoành",
+      "Thời gian được thể hiện trên trục hoành",
+      "Tỷ lệ xích trên trục tung và trục hoành bằng nhau",
+      "Thời gian được thể hiện trên trục tung"
+    ],
+    "c": 1,
+    "explanation": "Trục hoành của sơ đồ GANTT dùng để biểu thị thời gian (giờ, ngày, tuần, tháng, năm...)."
+  },
+  {
+    "id": 185,
+    "q": "Theo cấu trúc của sơ đồ GANTT thì:",
+    "o": [
+      "Các công việc được thể hiện trên trục hoành",
+      "Độ dài đoạn thẳng là độ dài của thời gian",
+      "Thời gian được thể hiện trên trục tung",
+      "Mỗi đoạn thẳng biểu hiện cho một công việc"
+    ],
+    "c": 3,
+    "explanation": "Trong sơ đồ GANTT, mỗi đoạn thẳng (thanh ngang) biểu hiện cho một công việc; vị trí và độ dài đoạn thẳng thể hiện tiến độ và thời gian hoàn thành."
+  },
+  {
+    "id": 186,
+    "q": "Nội dung nào sau đây không đúng khi phát biểu về sơ đồ GANTT:",
+    "o": [
+      "Sơ đồ GANTT được giới thiệu vào năm 1910 bởi Henry L. GANTT",
+      "Đây là phương pháp trình bày tiến trình thực tế cũng như kế hoạch thực hiện công việc của một dự án theo trình tự thời gian",
+      "Mục đích của sơ đồ GANTT là xác định một tiến độ hợp lý nhất để thực hiện các công việc khác nhau của dự án",
+      "Tiến độ của sơ đồ GANTT tùy thuộc vào độ dài của thời gian, những điều kiện ràng buộc và kỳ hạn phải tuân thủ"
+    ],
+    "c": 3,
+    "explanation": "Phát biểu D không chính xác theo đáp án chuẩn của giáo trình."
+  },
+  {
+    "id": 187,
+    "q": "Phát biểu nào không đúng về ưu điểm của sơ đồ GANTT?",
+    "o": [
+      "Dễ đọc, dễ nhận biết hiện trạng thực tế và tiến độ của từng công việc cũng như tình hình chung của toàn dự án",
+      "Thông qua sơ đồ thấy được tình hình thực hiện các công việc nhanh hay chậm và tính liên tục của chúng",
+      "Là cơ sở để phân phối nguồn lực và lựa chọn phương pháp phân phối nguồn lực hợp lý",
+      "Thích hợp cho quản lý các dự án phức tạp gồm nhiều công việc và cho thấy mối quan hệ giữa các công việc"
+    ],
+    "c": 3,
+    "explanation": "Sơ đồ GANTT có nhược điểm là không thích hợp cho các dự án lớn, phức tạp gồm hàng trăm công việc vì khó thể hiện mối quan hệ tương tác phức tạp giữa chúng. Do đó phát biểu D ghi đây là \"ưu điểm\" là không đúng."
+  },
+  {
+    "id": 188,
+    "q": "Phát biểu nào đúng nhất về sơ đồ GANTT?",
+    "o": [
+      "Khó nhận biết hiện trạng thực tế và tiến độ của từng công việc cũng như tình hình chung của toàn dự án",
+      "Thông qua sơ đồ không thấy được tình hình thực hiện các công việc nhanh hay chậm và tính liên tục của chúng",
+      "Trong những dự án lớn gồm nhiều công việc, không chỉ ra đủ và đúng sự tương tác và mối quan hệ các công việc",
+      "Thích hợp cho quản lý các dự án phức tạp gồm nhiều công việc"
+    ],
+    "c": 2,
+    "explanation": "Hạn chế lớn nhất của sơ đồ GANTT là đối với dự án lớn gồm nhiều công việc, nó không chỉ ra đầy đủ sự tương tác và mối quan hệ giữa các công việc."
+  },
+  {
+    "id": 189,
+    "q": "Dự án lắp ghép khu nhà công nghiệp có các công việc: (A) làm móng nhà (4 tuần, bắt đầu ngay); (B) vận chuyển cần cẩu (1 tuần, bắt đầu ngay); (C) lắp dựng cần trục (3 tuần, sau khi xong B); (D) vận chuyển cấu kiện (4 tuần, bắt đầu ngay); (E) lắp ghép khung nhà (7 tuần, sau khi xong C). Hãy cho biết thời gian thực hiện của dự án này là:",
+    "o": [
+      "10 tuần",
+      "11 tuần",
+      "12 tuần",
+      "13 tuần"
+    ],
+    "c": 1,
+    "explanation": "Đường găng (Critical Path): B (1 tuần) -> C (3 tuần) -> E (7 tuần) = 1 + 3 + 7 = 11 tuần."
+  },
+  {
+    "id": 190,
+    "q": "Nếu bạn là nhóm trưởng, hoạt động nào sau đây không được xem là \"Tổ chức nhóm làm việc\" của nhóm trong quá trình tham gia học môn Kỹ năng làm việc nhóm?",
+    "o": [
+      "Tổ chức thảo luận nhóm để quyết định số học phần sẽ đăng ký trong học kỳ tiếp theo",
+      "Chuẩn bị nội dung tổ chức cuộc họp phân công nhiệm vụ các thành viên trong nhóm",
+      "Tiến hành họp nhóm online về việc lập kế hoạch hoạt động nhóm",
+      "Thông báo đến các thành viên tham gia buổi họp tổng kết hoạt động nhóm"
+    ],
+    "c": 0,
+    "explanation": "Việc quyết định học phần cá nhân đăng ký học kỳ sau không phục vụ mục tiêu nhiệm vụ của môn KNLVN."
+  },
+  {
+    "id": 191,
+    "q": "Trong doanh nghiệp, sơ đồ Gantt giúp nhà quản lý dễ dàng:",
+    "o": [
+      "Lập kế hoạch ngân sách",
+      "Theo dõi tiến độ và điều chỉnh lịch làm việc",
+      "Đào tạo nhân viên mới",
+      "Thẩm định chất lượng sản phẩm"
+    ],
+    "c": 1,
+    "explanation": "Gantt thể hiện trực quan công việc đã làm/chưa làm giúp quản lý điều chỉnh tiến độ kịp thời."
+  },
+  {
+    "id": 192,
+    "q": "Sơ đồ Gantt thể hiện yếu tố cốt lõi nào?",
+    "o": [
+      "Thứ tự công việc và thời gian bắt đầu - kết thúc",
+      "Bảng lương chi tiết",
+      "Sơ đồ tổ chức nhân sự",
+      "Mô tả công việc chi tiết"
+    ],
+    "c": 0,
+    "explanation": "Trục hoành biểu thị thời gian, trục tung biểu thị thứ tự danh mục công việc."
+  },
+  {
+    "id": 193,
+    "q": "Bước đầu tiên khi lập sơ đồ Gantt là:",
+    "o": [
+      "Liệt kê toàn bộ các công việc cần thực hiện",
+      "Vẽ trục thời gian",
+      "Bố trí nhân sự",
+      "Dự trù ngân sách"
+    ],
+    "c": 0,
+    "explanation": "Bước 1 luôn là thu thập và liệt kê đầy đủ các công việc cấu thành dự án."
+  },
+  {
+    "id": 194,
+    "q": "Công dụng nổi bật nhất của biểu đồ Gantt trong quản trị tiến độ là:",
+    "o": [
+      "Giảm chi phí sản xuất",
+      "Giám sát sự tiến triển của các công việc theo mốc thời gian",
+      "Thay thế người quản lý",
+      "Tăng độ sáng tạo của nhân viên"
+    ],
+    "c": 1,
+    "explanation": "Biểu đồ Gantt minh họa rõ ràng trạng thái hoàn thành so với mốc thời gian dự kiến."
+  },
+  {
+    "id": 195,
+    "q": "Nếu một dự án xây dựng cần đảm bảo hoàn thành đúng hạn, sơ đồ Gantt sẽ hữu ích nhất trong việc:",
+    "o": [
+      "Dự đoán xu hướng thị trường",
+      "Giám sát tiến độ các hạng mục và mối quan hệ phụ thuộc",
+      "Phân tích hành vi khách hàng",
+      "Thiết kế kiến trúc công trình"
+    ],
+    "c": 1,
+    "explanation": "Việc kiểm soát thời hạn từng hạng mục và thứ tự thi công giúp đảm bảo tiến độ chung."
+  },
+  {
+    "id": 196,
+    "q": "Sơ đồ Gantt do ai phát triển vào đầu thế kỷ 20?",
+    "o": [
+      "Frederick Taylor",
+      "Henry Gantt",
+      "Henri Fayol",
+      "Max Weber"
+    ],
+    "c": 1,
+    "explanation": "Sơ đồ mang tên nhà kỹ sư và tư vấn quản trị người Mỹ Henry Gantt (1861–1919)."
+  },
+  {
+    "id": 197,
+    "q": "Trực quan hóa của sơ đồ Gantt sử dụng dạng hình học nào?",
+    "o": [
+      "Biểu đồ tròn (Pie chart)",
+      "Biểu đồ thanh ngang (Horizontal Bar chart)",
+      "Biểu đồ đường (Line chart)",
+      "Biểu đồ rãnh (Area chart)"
+    ],
+    "c": 1,
+    "explanation": "Các công việc được biểu diễn dưới dạng các thanh ngang có chiều dài tương ứng với thời lượng."
+  },
+  {
+    "id": 198,
+    "q": "Khi lập sơ đồ Gantt cho một chiến dịch truyền thông, bước \"Xác định thứ tự công việc\" giúp:",
+    "o": [
+      "Tính chính xác chi phí quảng cáo",
+      "Đảm bảo các công việc tiền đề được làm trước công việc phụ thuộc",
+      "Chọn được diễn viên nổi tiếng",
+      "Đàm phán giảm giá"
+    ],
+    "c": 1,
+    "explanation": "Thứ tự giúp các công việc đòi hỏi đầu vào từ công việc trước được triển khai đúng trình tự logic."
+  },
+  {
+    "id": 199,
+    "q": "Yếu tố nào không được thể hiện trực tiếp trên sơ đồ Gantt?",
+    "o": [
+      "Thứ tự công việc",
+      "Thời gian bắt đầu - kết thúc",
+      "Chi phí chi tiết từng công việc",
+      "Mối quan hệ phụ thuộc"
+    ],
+    "c": 2,
+    "explanation": "Gantt quản lý chiều thời gian và tiến độ; chi phí ngân sách không thể hiện trực tiếp trên dạng sơ đồ này."
+  },
+  {
+    "id": 200,
+    "q": "Trong quy trình lập sơ đồ Gantt, bước nào thực hiện trước khi xây dựng bảng phân tích công việc?",
+    "o": [
+      "Quyết định thời điểm bắt đầu - kết thúc",
+      "Xác định trình tự công việc",
+      "Liệt kê công việc",
+      "Tất cả đáp án đều đúng"
+    ],
+    "c": 2,
+    "explanation": "Phải liệt kê được danh mục công việc (Bước 1) mới tiến hành phân tích chi tiết."
+  },
+  {
+    "id": 201,
+    "q": "Doanh nghiệp sản xuất cần giao hàng đúng hạn. Việc xác định ngày bắt đầu và kết thúc từng công đoạn sản xuất tương ứng với bước nào?",
+    "o": [
+      "Bước 2",
+      "Bước 3",
+      "Bước 4",
+      "Bước 6"
+    ],
+    "c": 2,
+    "explanation": "Bước 4 trong sơ đồ Gantt là quyết định thời điểm bắt đầu và kết thúc cụ thể cho từng hoạt động."
+  },
+  {
+    "id": 202,
+    "q": "Khi lập sơ đồ Gantt cho dự án khởi nghiệp, nếu bỏ qua bước “sắp xếp trình tự thực hiện công việc” sẽ dẫn đến:",
+    "o": [
+      "Không thể đo lường chi phí",
+      "Công việc thực hiện lộn xộn, không đúng thứ tự",
+      "Không biết ai chịu trách nhiệm",
+      "Không có thông tin về mốc thời gian"
+    ],
+    "c": 1,
+    "explanation": "Thiếu bước sắp xếp trình tự khiến các công việc đè chéo nhau, gây chồng chéo lộn xộn."
+  },
+  {
+    "id": 203,
+    "q": "Trong nguyên tắc 5M, yếu tố \"Man\" đề cập đến:",
+    "o": [
+      "Máy móc thiết bị",
+      "Nguồn nhân lực (Con người)",
+      "Nguyên liệu sản xuất",
+      "Ngân sách"
+    ],
+    "c": 1,
+    "explanation": "Nguyên tắc 5M: Man = Con người / Nguồn nhân lực."
+  },
+  {
+    "id": 204,
+    "q": "Yếu tố \"Money\" trong nguyên tắc 5M liên quan đến:",
+    "o": [
+      "Quản lý thời gian",
+      "Ngân sách tài chính",
+      "Chất lượng sản phẩm",
+      "Phương pháp sản xuất"
+    ],
+    "c": 1,
+    "explanation": "Money = Tiền bạc / Tài chính / Ngân sách."
+  },
+  {
+    "id": 205,
+    "q": "\"Machine\" trong nguyên tắc 5M dùng để chỉ:",
+    "o": [
+      "Máy móc, công cụ hỗ trợ thực hiện",
+      "Quản lý con người",
+      "Nhà cung cấp nguyên liệu",
+      "Phương pháp quản lý"
+    ],
+    "c": 0,
+    "explanation": "Machine = Máy móc, trang thiết bị và công nghệ."
+  },
+  {
+    "id": 206,
+    "q": "Nếu trong nhóm có bất đồng quan điểm, nguyên tắc hợp tác nào dưới đây giúp giải quyết hiệu quả?",
+    "o": [
+      "Tập trung vào lỗi của người khác",
+      "Chia sẻ trách nhiệm và không đổ lỗi cho nhau",
+      "Bảo vệ ý kiến của mình đến cùng",
+      "Để trưởng nhóm quyết định toàn bộ"
+    ],
+    "c": 1,
+    "explanation": "Tinh thần trách nhiệm chung và thói quen không đổ lỗi là nguyên tắc vàng gỡ rối bất đồng."
+  },
+  {
+    "id": 207,
+    "q": "Theo nội dung đã học, điều gì quyết định sức mạnh và hiệu quả của sự hợp tác?",
+    "o": [
+      "Quy mô nhóm lớn hay nhỏ",
+      "Sự gắn kết của các thành viên",
+      "Thời gian làm việc chung",
+      "Số lượng ý tưởng đưa ra"
+    ],
+    "c": 1,
+    "explanation": "Mức độ gắn kết và niềm tin giữa các thành viên là thước đo sức mạnh hợp tác."
+  },
+  {
+    "id": 208,
+    "q": "Theo nội dung trên, hợp tác giúp tìm ra giải pháp tối ưu nhờ:",
+    "o": [
+      "Giảm số lượng ý kiến",
+      "Lắng nghe nhiều ý kiến, hiểu vấn đề rõ hơn",
+      "Tránh tranh luận",
+      "Chỉ chọn ý kiến của trưởng nhóm"
+    ],
+    "c": 1,
+    "explanation": "Sự cởi mở lắng nghe các đa chiều giúp soi sáng vấn đề toàn diện để tìm giải pháp tối ưu."
+  },
+  {
+    "id": 209,
+    "q": "Khi hợp tác, bạn nhận được góp ý về điểm yếu của mình. Cách ứng xử hợp tác nhất là:",
+    "o": [
+      "Bỏ qua vì không quan trọng",
+      "Phản bác ngay để bảo vệ bản thân",
+      "Tiếp nhận góp ý để cải thiện và nhận thức giá trị bản thân",
+      "Chỉ nghe nhưng không thay đổi"
+    ],
+    "c": 2,
+    "explanation": "Cầu thị tiếp thu phản biện giúp cá nhân ngày càng hoàn thiện và tăng giá trị đóng góp cho nhóm."
+  },
+  {
+    "id": 210,
+    "q": "Bạn muốn mở rộng tư duy sáng tạo khi làm việc nhóm. Cách hiệu quả nhất là:",
+    "o": [
+      "Luôn giữ ý tưởng cũ vì an toàn",
+      "Chỉ làm theo hướng dẫn của trưởng nhóm",
+      "Chủ động lắng nghe, học hỏi, và sẵn sàng sửa đổi ý tưởng",
+      "Đưa ra thật nhiều ý tưởng không cần xem xét tính khả thi"
+    ],
+    "c": 2,
+    "explanation": "Tư duy mở (Growth mindset), sẵn sàng sửa đổi ý tưởng khi tiếp thu tri thức mới giúp bứt phá sáng tạo."
+  },
+  {
+    "id": 211,
+    "q": "Trong dự án, nhóm bạn đang bị chậm tiến độ. Theo lợi ích của hợp tác, cách nào giúp nâng cao hiệu suất?",
+    "o": [
+      "Mỗi người tự làm phần của mình, không cần trao đổi",
+      "Tăng số lượng cuộc họp để kiểm tra",
+      "Kết hợp ý tưởng, chia sẻ hỗ trợ lẫn nhau để hoàn thành nhanh hơn",
+      "Cắt bớt công việc để dễ làm"
+    ],
+    "c": 2,
+    "explanation": "Sự tương trợ san sẻ khối lượng công việc là giải pháp khắc phục chậm tiến độ hiệu quả."
+  },
+  {
+    "id": 212,
+    "q": "Trong nguyên tắc 2C, “Control” có nghĩa là:",
+    "o": [
+      "Lên kế hoạch phân công công việc",
+      "Xác định phương pháp để kiểm soát công việc",
+      "Thực hiện giám sát nhân sự",
+      "Chỉ ghi chép kết quả công việc"
+    ],
+    "c": 1,
+    "explanation": "Nguyên tắc 2C bao gồm Communication (Giao tiếp) & Control (Kiểm soát tiến độ/chất lượng)."
+  },
+  {
+    "id": 213,
+    "q": "Một công ty đang triển khai chiến dịch Marketing, nhóm phụ trách sáng tạo có đủ ý tưởng nhưng tiến độ bị chậm do nhiều thành viên “thiếu trách nhiệm”. Biện pháp nào phù hợp nhất để khắc phục?",
+    "o": [
+      "Giao thêm việc cho các thành viên tích cực",
+      "Thiết lập hệ thống kiểm soát tiến độ và nhắc nhở trách nhiệm rõ ràng",
+      "Tạm dừng dự án để đào tạo lại",
+      "Cắt giảm thành viên trong nhóm"
+    ],
+    "c": 1,
+    "explanation": "Áp dụng vế \"Control\" - siết chặt kiểm soát và quy trách nhiệm rõ ràng để chấn chỉnh kỷ luật."
+  },
+  {
+    "id": 214,
+    "q": "Bạn là người có nhiều kinh nghiệm và đưa ra giải pháp cho nhóm. Tuy nhiên, nhóm vẫn chọn phương án khác. Thái độ phù hợp nhất là:",
+    "o": [
+      "Khẳng định ý kiến của mình là tối ưu và yêu cầu áp dụng",
+      "Thể hiện sự khó chịu vì ý kiến bị bỏ qua",
+      "Chấp nhận quyết định chung, tiếp tục hỗ trợ để nhóm thành công",
+      "Rút lui khỏi dự án vì không ai nghe mình"
+    ],
+    "c": 2,
+    "explanation": "Tinh thần \"Đặt nhóm lên trên hết\" - tôn trọng quyết định tập thể và dồn sức cho mục tiêu chung."
+  },
+  {
+    "id": 215,
+    "q": "Trong nhóm, một thành viên thường chia sẻ kinh nghiệm cá nhân nhưng đôi khi chưa liên quan trực tiếp đến vấn đề. Thái độ đúng khi tiếp nhận là:",
+    "o": [
+      "Ngắt lời vì tốn thời gian",
+      "Lắng nghe, chọn lọc và áp dụng nếu phù hợp",
+      "Phớt lờ vì không hữu ích ngay lập tức",
+      "Yêu cầu họ chỉ chia sẻ khi được hỏi"
+    ],
+    "c": 1,
+    "explanation": "Lắng nghe tôn trọng và có bộ lọc chọn lọc tri thức hữu ích."
+  },
+  {
+    "id": 216,
+    "q": "Trong một cuộc họp nhóm, bạn nhận thấy mâu thuẫn nảy sinh vì một số thành viên không tôn trọng ý kiến của nhau. Cách xử lý tốt nhất là:",
+    "o": [
+      "Nhắc nhở mọi người lắng nghe và tôn trọng ý kiến, dù trái chiều",
+      "Đề nghị trưởng nhóm bỏ qua ý kiến gây tranh cãi",
+      "Yêu cầu tạm dừng thảo luận để tránh xung đột",
+      "Chuyển sang làm việc cá nhân để không phải tranh luận"
+    ],
+    "c": 0,
+    "explanation": "Đưa cuộc họp về đúng văn hóa tôn trọng đa dạng góc nhìn."
+  },
+  {
+    "id": 217,
+    "q": "Bộ 5M trong quản trị nguồn lực bao gồm các yếu tố nào?",
+    "o": [
+      "Man, Money, Machine, Material, Method",
+      "Mind, Money, Machine, Management, Market",
+      "Man, Money, Model, Material, Method",
+      "Man, Move, Machine, Material, Method"
+    ],
+    "c": 0,
+    "explanation": "5M gồm: Man (Con người), Money (Tài chính), Machine (Máy móc), Material (Nguyên vật liệu), Method (Phương pháp)."
+  },
+  {
+    "id": 218,
+    "q": "Bộ nguyên tắc 2C trong điều hành nhóm bao gồm:",
+    "o": [
+      "Communication & Control",
+      "Care & Cooperation",
+      "Clear & Clever",
+      "Challenge & Change"
+    ],
+    "c": 0,
+    "explanation": "2C = Communication (Giao tiếp) & Control (Kiểm soát)."
+  },
+  {
+    "id": 219,
+    "q": "Công ty phần mềm muốn \"Ra mắt sản phẩm mới vào quý 3, đạt 50.000 lượt tải trong 3 tháng đầu\". Theo SMART, nếu không phân tích thị trường kỹ lưỡng trước khi đặt mục tiêu, yếu tố nào dễ bị vi phạm nhất?",
+    "o": [
+      "Specific",
+      "Measurable",
+      "Achievable",
+      "Timely"
+    ],
+    "c": 2,
+    "explanation": "Đặt mục tiêu số lượng lớn mà không nghiên cứu thị trường dễ dẫn đến mục tiêu viễn vông, không khả thi (Achievable)."
+  },
+  {
+    "id": 220,
+    "q": "Trong một dự án xây dựng, mục tiêu \"Hoàn thành trước Tết Nguyên Đán\" chưa đạt chuẩn SMART vì thiếu yếu tố nào?",
+    "o": [
+      "Measurable",
+      "Timely",
+      "Specific",
+      "Achievable"
+    ],
+    "c": 2,
+    "explanation": "\"Trước Tết\" là mốc thời gian mập mờ, thiếu sự cụ thể (Specific) về ngày tháng chuẩn xác."
+  },
+  {
+    "id": 221,
+    "q": "Nếu doanh nghiệp đặt mục tiêu \"Tăng trưởng doanh thu gấp 5 lần trong 1 tháng\", yếu tố SMART nào bị vi phạm nghiêm trọng nhất?",
+    "o": [
+      "Achievable (Khả thi)",
+      "Measurable",
+      "Specific",
+      "Timely"
+    ],
+    "c": 0,
+    "explanation": "Tăng 500% trong 1 tháng là mục tiêu bất khả thi đối với hoạt động vận hành thực tế."
+  },
+  {
+    "id": 222,
+    "q": "Trong mô hình 5W1H, câu hỏi \"Who?\" giúp xác định:",
+    "o": [
+      "Đối tượng thực hiện hoặc liên quan",
+      "Thời gian hoàn thành",
+      "Địa điểm tổ chức",
+      "Nguyên nhân vấn đề"
+    ],
+    "c": 0,
+    "explanation": "Who = Ai làm? Ai chịu trách nhiệm? Ai là đối tượng hướng tới?"
+  },
+  {
+    "id": 223,
+    "q": "Trong mô hình 5W1H, câu hỏi \"What?\" giúp xác định:",
+    "o": [
+      "Nội dung, nhiệm vụ cần thực hiện",
+      "Cách thức thực hiện",
+      "Chi phí thực hiện",
+      "Thời hạn bàn giao"
+    ],
+    "c": 0,
+    "explanation": "What = Làm cái gì? Nội dung nhiệm vụ là gì?"
+  },
+  {
+    "id": 224,
+    "q": "Trong mô hình 5W1H, câu hỏi \"Where?\" dùng để xác định:",
+    "o": [
+      "Địa điểm, không gian thực hiện",
+      "Thời gian bắt đầu",
+      "Phương pháp triển khai",
+      "Lý do thực hiện"
+    ],
+    "c": 0,
+    "explanation": "Where = Ở đâu? Địa điểm triển khai công việc."
+  },
+  {
+    "id": 225,
+    "q": "Trong tình huống dự án đa quốc gia, việc thêm thông tin về điều kiện ràng buộc như “phải có giấy phép thông quan” sẽ ảnh hưởng đến yếu tố nào?",
+    "o": [
+      "Thứ tự và thời gian công việc",
+      "Chi phí vận chuyển",
+      "Chất lượng hàng hóa",
+      "Tỷ giá ngoại tệ"
+    ],
+    "c": 0,
+    "explanation": "Giấy phép thông quan là điều kiện tiền đề, ảnh hưởng trực tiếp tới lịch trình và thứ tự thực hiện trên sơ đồ tiến độ."
+  },
+  {
+    "id": 226,
+    "q": "Trong tình huống dự án đa quốc gia, sơ đồ Gantt cần điều chỉnh khi:",
+    "o": [
+      "Có sự thay đổi múi giờ và thời hạn bàn giao giữa các Quốc gia",
+      "Số lượng nhân viên tăng",
+      "Logo thương hiệu thay đổi",
+      "Công cụ chat nhóm bị lỗi tạm thời"
+    ],
+    "c": 0,
+    "explanation": "Chênh lệch múi giờ và thời hạn các quốc gia tác động trực tiếp tới lịch trình tiến độ Gantt."
+  },
+  {
+    "id": 227,
+    "q": "Trong một dự án phần mềm, nhóm dự án áp dụng Agile thay vì Waterfall nhằm:",
+    "o": [
+      "Tăng tính linh hoạt và khả năng thích ứng với thay đổi",
+      "Tăng chi phí dự án",
+      "Giảm số lượng thành viên",
+      "Không cần lập kế hoạch"
+    ],
+    "c": 0,
+    "explanation": "Mô hình Agile giúp thích ứng linh hoạt theo chu kỳ ngắn thay vì cứng nhắc như Waterfall truyền thống."
+  },
+  {
+    "id": 228,
+    "q": "Trong mô hình 5W1H, câu hỏi \"When?\" giúp xác định:",
+    "o": [
+      "Thời gian, mốc thời điểm thực hiện",
+      "Địa điểm làm việc",
+      "Chi phí dự toán",
+      "Người phụ trách"
+    ],
+    "c": 0,
+    "explanation": "When = Khi nào? Mốc thời gian hoàn thành."
+  },
+  {
+    "id": 229,
+    "q": "Trong mô hình 5W1H, câu hỏi \"Why?\" có vai trò:",
+    "o": [
+      "Xác định lý do, mục đích của hành động",
+      "Xác định người làm",
+      "Xác định địa điểm",
+      "Xác định cách làm"
+    ],
+    "c": 0,
+    "explanation": "Why = Tại sao? Lý do và mục tiêu tồn tại của nhiệm vụ."
+  },
+  {
+    "id": 230,
+    "q": "Trong mô hình 5W1H, yếu tố \"How?\" đề cập đến:",
+    "o": [
+      "Phương pháp, cách thức triển khai",
+      "Chi phí kinh phí",
+      "Thời gian tiến hành",
+      "Địa điểm thực hiện"
+    ],
+    "c": 0,
+    "explanation": "How = Làm như thế nào? Phương pháp và quy trình thực hiện."
+  },
+  {
+    "id": 231,
+    "q": "Trong dự án cải tiến chất lượng sản phẩm, câu hỏi “Who?” có thể áp dụng để:",
+    "o": [
+      "Xác định khách hàng mục tiêu để lấy phản hồi (hoặc nhân sự phụ trách)",
+      "Xác định lý do sản phẩm bị lỗi",
+      "Xác định chi phí cải tiến",
+      "Xác định thời điểm kiểm tra"
+    ],
+    "c": 0,
+    "explanation": "Câu hỏi Who xác định chủ thể tác động hoặc đối tượng thụ hưởng (khách hàng/nhân sự)."
+  },
+  {
+    "id": 232,
+    "q": "Khi phân tích sự cố mất dữ liệu, câu hỏi “What?” sẽ giúp:",
+    "o": [
+      "Xác định loại dữ liệu bị mất",
+      "Xác định ai là người liên quan",
+      "Xác định phương pháp phục hồi",
+      "Xác định thời điểm xảy ra sự cố"
+    ],
+    "c": 0,
+    "explanation": "\"What\" chỉ rõ đối tượng sự cố - loại dữ liệu nào đã bị tổn thất."
+  },
+  {
+    "id": 233,
+    "q": "Trong việc tối ưu chuỗi cung ứng, câu hỏi “Where?” có thể dùng để:",
+    "o": [
+      "Xác định kho lưu trữ gây chậm trễ",
+      "Xác định lý do thiếu hàng",
+      "Xác định ngân sách vận chuyển",
+      "Xác định nhân viên giao hàng"
+    ],
+    "c": 0,
+    "explanation": "\"Where\" định vị vị trí không gian xảy ra điểm nghẽn (kho hàng/mắt xích nào)."
+  },
+  {
+    "id": 234,
+    "q": "Khi quản lý tiến độ dự án, câu hỏi “When?” có thể giúp:",
+    "o": [
+      "Xác định giai đoạn dự án bị chậm",
+      "Xác định nguyên nhân chậm",
+      "Xác định nhóm cần hỗ trợ",
+      "Xác định phương pháp quản lý mới"
+    ],
+    "c": 0,
+    "explanation": "\"When\" khu biệt thời điểm/giai đoạn xảy ra sự trễ tiến độ."
+  },
+  {
+    "id": 235,
+    "q": "Trong đánh giá thất bại chiến dịch quảng cáo, câu hỏi “Why?” đóng vai trò:",
+    "o": [
+      "Xác định nguyên nhân thất bại để điều chỉnh",
+      "Xác định kênh truyền thông mới",
+      "Xác định chi phí đã chi",
+      "Xác định thời điểm triển khai lại"
+    ],
+    "c": 0,
+    "explanation": "\"Why\" phân tích nguyên nhân gốc rễ dẫn tới thất bại."
+  },
+  {
+    "id": 236,
+    "q": "Nhóm bạn đang làm việc và phát sinh vấn đề kỹ thuật mà không ai có chuyên môn. Theo nội dung tài liệu, điều này phản ánh:",
+    "o": [
+      "Kỹ năng tổ chức chưa dự trù tình huống phát sinh",
+      "Thành viên không chịu học hỏi",
+      "Dự án quá phức tạp",
+      "Trưởng nhóm thiếu kỹ năng lãnh đạo"
+    ],
+    "c": 0,
+    "explanation": "Thiếu phương án dự phòng cho các lỗ hổng kỹ thuật thể hiện sự hạn chế trong khâu dự báo và tổ chức."
+  },
+  {
+    "id": 237,
+    "q": "Bạn là trưởng nhóm của một dự án gấp rút. Một thành viên giỏi nhất bị quá tải, trong khi thành viên khác vẫn dư thời gian. Giải pháp tối ưu là:",
+    "o": [
+      "Để thành viên giỏi tự xoay xở vì chất lượng cao",
+      "Chia lại một phần công việc cho các thành viên còn dư thời gian",
+      "Tuyển thêm người từ ngoài nhóm",
+      "Giảm yêu cầu công việc của thành viên đó"
+    ],
+    "c": 1,
+    "explanation": "Tái điều phối tải công việc để san sẻ áp lực và tối ưu hóa thời gian của toàn nhóm."
+  },
+  {
+    "id": 238,
+    "q": "Bạn đưa ra một ý tưởng mới nhưng bị phản đối ngay từ đầu. Theo kỹ năng thuyết phục, bước tiếp theo nên làm là:",
+    "o": [
+      "Bỏ qua ý tưởng",
+      "Chứng minh bằng lý lẽ và bằng chứng tại sao ý tưởng của bạn đúng",
+      "Tranh cãi gay gắt với người phản đối",
+      "Chuyển sang chủ đề khác"
+    ],
+    "c": 1,
+    "explanation": "Thuyết phục khoa học dựa trên lập luận logic, dữ liệu và luận cứ thực tiễn thay vì cảm xúc."
+  },
+  {
+    "id": 239,
+    "q": "Bạn sắp thuyết phục ban lãnh đạo phê duyệt một dự án. Bước chuẩn bị đầu tiên theo nội dung trên nên là:",
+    "o": [
+      "Xác định rõ đối tượng, vấn đề và lý do quan trọng của dự án",
+      "Chuẩn bị thật nhiều hình ảnh",
+      "Thuê người nói thay",
+      "Giữ bí mật kế hoạch để tạo bất ngờ"
+    ],
+    "c": 0,
+    "explanation": "Khâu chuẩn bị thuyết phục luôn bắt đầu từ việc thấu hiểu người nghe và làm rõ tính cần thiết của đề án."
+  },
+  {
+    "id": 240,
+    "q": "Trong buổi thuyết trình, bạn nhận thấy một số người khoanh tay, gõ bàn. Điều này có thể cho thấy:",
+    "o": [
+      "Họ đang hoàn toàn đồng ý",
+      "Bạn cần thay đổi cách truyền đạt hoặc lập luận",
+      "Họ đang thư giãn",
+      "Họ muốn phát biểu ngay"
+    ],
+    "c": 1,
+    "explanation": "Ngôn ngữ cơ thể thể hiện sự sốt ruột/hoài nghi cảnh báo diễn giả cần linh hoạt điều chỉnh nhịp độ hoặc cách trình bày."
+  },
+  {
+    "id": 241,
+    "q": "Khi thuyết phục đồng nghiệp, bạn chọn thời điểm họ đang bận rộn và căng thẳng. Kết quả là họ không tập trung nghe. Sai lầm chính ở đây là:",
+    "o": [
+      "Không chọn thời điểm thích hợp",
+      "Không sử dụng số liệu minh họa",
+      "Không gửi tài liệu trước",
+      "Nói quá chậm"
+    ],
+    "c": 0,
+    "explanation": "Nguyên tắc thuyết phục thành công đòi hỏi thiên thời - chọn thời điểm tâm lý đối phương sẵn sàng tiếp nhận thông tin."
+  },
+  {
+    "id": 242,
+    "q": "Bạn muốn thuyết phục một khách hàng khó tính. Cách tiếp cận hiệu quả nhất theo nội dung trên là:",
+    "o": [
+      "Gây áp lực để họ quyết định nhanh",
+      "Lắng nghe, thấu hiểu và đưa lý lẽ phù hợp với nhu cầu của họ",
+      "Chỉ nói về lợi ích cho công ty bạn",
+      "Tránh đề cập đến điểm yếu của sản phẩm"
+    ],
+    "c": 1,
+    "explanation": "Thuyết phục đỉnh cao xuất phát từ sự thấu cảm nhu cầu khách hàng để cung cấp giải pháp trúng đích."
+  },
+  {
+    "id": 243,
+    "q": "Bạn đang nghe đồng nghiệp trình bày một ý tưởng mới. Để áp dụng tư duy phản biện, bước đầu tiên bạn nên làm là:",
+    "o": [
+      "Ngay lập tức phản đối",
+      "Ghi nhận, phân tích dựa trên kiến thức và kinh nghiệm",
+      "So sánh với ý tưởng của bạn",
+      "Hỏi người khác nghĩ gì trước"
+    ],
+    "c": 1,
+    "explanation": "Tư duy phản biện mở đầu bằng việc tiếp nhận khách quan và phân tích dữ liệu dựa trên cơ sở tri thức."
+  },
+  {
+    "id": 244,
+    "q": "Trong một cuộc họp, bạn muốn bảo vệ quan điểm của mình bằng tư duy phản biện. Cách tiếp cận hiệu quả nhất là:",
+    "o": [
+      "Trích dẫn ý kiến nổi tiếng nhưng không liên quan",
+      "Đưa ra dẫn chứng, lập luận logic và phù hợp",
+      "Lặp lại quan điểm nhiều lần",
+      "Nói thật lớn để lấn tiếng người khác"
+    ],
+    "c": 1,
+    "explanation": "Sức mạnh của phản biện nằm ở tính chặt chẽ của lập luận logic và bằng chứng xác thực."
+  },
+  {
+    "id": 245,
+    "q": "Một nhóm đưa ra ý tưởng rất sáng tạo nhưng còn thiếu tính thực tiễn. Theo nội dung đã học, bạn nên:",
+    "o": [
+      "Bỏ qua vì không áp dụng ngay được",
+      "Đưa ra phân tích, góp ý để điều chỉnh ý tưởng",
+      "Giữ nguyên để tôn trọng người đưa ý tưởng",
+      "Đề nghị thay ý tưởng mới hoàn toàn"
+    ],
+    "c": 1,
+    "explanation": "Thái độ xây dựng là gọt giũa và hoàn thiện ý tưởng sáng tạo để gia tăng tính khả thi."
+  },
+  {
+    "id": 246,
+    "q": "Khi phân tích vấn đề phức tạp, bạn áp dụng tư duy phản biện bằng cách:",
+    "o": [
+      "Chia nhỏ vấn đề, xem xét nhiều góc nhìn và đánh giá dựa trên bằng chứng",
+      "Chỉ nhìn từ một góc độ quen thuộc",
+      "Chọn giải pháp nhanh nhất",
+      "Hỏi ý kiến đa số và theo"
+    ],
+    "c": 0,
+    "explanation": "Phương pháp tư duy phản biện hệ thống: Bóc tách bài toán, đa chiều hóa góc nhìn và kiểm chứng bằng chứng."
+  },
+  {
+    "id": 247,
+    "q": "Trong giao tiếp, tư duy phản biện hỗ trợ kỹ năng trình bày như thế nào?",
+    "o": [
+      "Giúp sử dụng lập luận chặt chẽ, thu hút người nghe",
+      "Khiến người nghe phải đồng ý ngay lập tức",
+      "Giúp nói nhiều thông tin cùng lúc",
+      "Loại bỏ hoàn toàn câu hỏi của người khác"
+    ],
+    "c": 0,
+    "explanation": "Tư duy phản biện giúp cấu trúc bài nói mạch lạc, sắc bén và giàu tính thuyết phục."
+  },
+  {
+    "id": 248,
+    "q": "Trong nhóm, mỗi người có một cách nhìn khác nhau về vấn đề. Bạn nên làm gì để tìm giải pháp nhanh và hiệu quả?",
+    "o": [
+      "Chọn ý kiến của đa số ngay lập tức",
+      "Lắng nghe và tổng hợp các quan điểm khác nhau",
+      "Tranh luận để bảo vệ ý kiến của mình",
+      "Yêu cầu mọi người làm theo kế hoạch sẵn có"
+    ],
+    "c": 1,
+    "explanation": "Tổng hợp các góc nhìn khác nhau giúp đúc kết giải pháp toàn diện và tối ưu."
+  },
+  {
+    "id": 249,
+    "q": "Bạn phụ trách một dự án và muốn áp dụng nguyên tắc “Control”. Việc đầu tiên nên làm là:",
+    "o": [
+      "Đoán tiến độ dự án dựa trên kinh nghiệm",
+      "Xác định đơn vị đo lường và công cụ đo lường phù hợp",
+      "Chờ đến cuối dự án mới kiểm tra",
+      "Chia việc mà không cần tiêu chuẩn đánh giá"
+    ],
+    "c": 1,
+    "explanation": "Muốn kiểm soát (Control) phải thiết lập được tiêu chuẩn, chỉ số và công cụ đo lường rõ ràng."
+  },
+  {
+    "id": 250,
+    "q": "Trong một chiến dịch quảng cáo, nhóm bạn gặp vấn đề sai lệch số liệu. Áp dụng nguyên tắc 2C, hành động đúng nhất là:",
+    "o": [
+      "Tăng ngân sách để bù sai số",
+      "Rà soát công cụ đo lường và các bước thu thập dữ liệu",
+      "Bỏ qua sai số vì kết quả vẫn đạt mục tiêu",
+      "Chuyển sang chiến dịch mới"
+    ],
+    "c": 1,
+    "explanation": "Khắc phục sai lệch số liệu bằng việc kiểm tra lại quy trình thu thập và công cụ đo lường."
+  }
+];
+   
+ // APP STATE MANAGEMENT
+        let state = {
+            userAnswers: {},   // { [qId]: selectedOptIdx }
+            bookmarks: [],     // [qId]
+            wrongQuestions: [],// [qId]
+            isDarkMode: false,
+            currentTab: 'dashboard',
+            
+            // Practice State
+            practiceList: [],
+            practiceIdx: 0,
+            practiceStageIdx: 0,
+            isMarathon: false,
+
+            // Exam State
+            examQuestions: [],
+            examAnswers: {},   // { [examIdx]: selectedOptIdx }
+            examCurrentIdx: 0,
+            examTimer: null,
+            examTimeRemaining: 0,
+
+            // Search State
+            activeSearchFilter: 'all'
+        };
+
+        // LOAD AND SAVE LOCAL STORAGE
+        function loadState() {
+            const saved = localStorage.getItem('mln_343_quiz_state');
+            if (saved) {
+                try {
+                    const parsed = JSON.parse(saved);
+                    state.userAnswers = parsed.userAnswers || {};
+                    state.bookmarks = parsed.bookmarks || [];
+                    state.wrongQuestions = parsed.wrongQuestions || [];
+                    state.isDarkMode = parsed.isDarkMode || false;
+                } catch(e) {}
+            }
+            if (state.isDarkMode) {
+                document.documentElement.classList.add('dark');
+                document.getElementById('theme-icon').className = 'fa-solid fa-sun';
+            } else {
+                document.documentElement.classList.remove('dark');
+                document.getElementById('theme-icon').className = 'fa-solid fa-moon';
+            }
+        }
+
+        function saveState() {
+            localStorage.setItem('mln_343_quiz_state', JSON.stringify({
+                userAnswers: state.userAnswers,
+                bookmarks: state.bookmarks,
+                wrongQuestions: state.wrongQuestions,
+                isDarkMode: state.isDarkMode
+            }));
+            updateDashboardStats();
+        }
+
+        // NAVIGATION TABS
+        function switchTab(tabId) {
+            state.currentTab = tabId;
+
+            document.getElementById('tab-dashboard').classList.add('hidden');
+            document.getElementById('tab-quiz').classList.add('hidden');
+            document.getElementById('tab-exam-setup').classList.add('hidden');
+            document.getElementById('tab-exam-play').classList.add('hidden');
+            document.getElementById('tab-search').classList.add('hidden');
+
+            // Reset Nav Styles
+            ['dashboard', 'exam', 'search'].forEach(name => {
+                const btn = document.getElementById(`nav-${name}`);
+                if (btn) {
+                    btn.className = 'px-4 py-2 rounded-lg text-sm font-semibold transition text-slate-600 dark:text-slate-300 hover:text-indigo-600';
+                }
+            });
+
+            if (tabId === 'dashboard') {
+                document.getElementById('tab-dashboard').classList.remove('hidden');
+                document.getElementById('nav-dashboard').className = 'px-4 py-2 rounded-lg text-sm font-semibold transition bg-white dark:bg-slate-800 shadow-sm text-indigo-600 dark:text-indigo-400';
+                renderStages();
+                updateDashboardStats();
+            } else if (tabId === 'quiz') {
+                document.getElementById('tab-quiz').classList.remove('hidden');
+            } else if (tabId === 'exam-setup') {
+                document.getElementById('tab-exam-setup').classList.remove('hidden');
+                document.getElementById('nav-exam').className = 'px-4 py-2 rounded-lg text-sm font-semibold transition bg-white dark:bg-slate-800 shadow-sm text-indigo-600 dark:text-indigo-400';
+            } else if (tabId === 'exam-play') {
+                document.getElementById('tab-exam-play').classList.remove('hidden');
+            } else if (tabId === 'search') {
+                document.getElementById('tab-search').classList.remove('hidden');
+                document.getElementById('nav-search').className = 'px-4 py-2 rounded-lg text-sm font-semibold transition bg-white dark:bg-slate-800 shadow-sm text-indigo-600 dark:text-indigo-400';
+                filterQuestions();
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // DARK MODE TOGGLE
+        function toggleDarkMode() {
+            state.isDarkMode = !state.isDarkMode;
+            const icon = document.getElementById('theme-icon');
+            if (state.isDarkMode) {
+                document.documentElement.classList.add('dark');
+                icon.className = 'fa-solid fa-sun';
+            } else {
+                document.documentElement.classList.remove('dark');
+                icon.className = 'fa-solid fa-moon';
+            }
+            saveState();
+        }
+
+        // RESET DATA
+        function confirmResetData() {
+            if (confirm('Bạn có chắc chắn muốn xóa toàn bộ tiến độ làm bài, câu đánh dấu và câu hay làm sai không?')) {
+                state.userAnswers = {};
+                state.bookmarks = [];
+                state.wrongQuestions = [];
+                saveState();
+                switchTab('dashboard');
+                alert('Đã xóa sạch tiến độ thành công!');
+            }
+        }
+
+        // UPDATE DASHBOARD STATS
+        function updateDashboardStats() {
+            document.getElementById('stat-total-q').textContent = quizData.length;
+            document.getElementById('stat-done-q').textContent = Object.keys(state.userAnswers).length;
+            document.getElementById('stat-bookmark-q').textContent = state.bookmarks.length;
+            document.getElementById('stat-wrong-q').textContent = state.wrongQuestions.length;
+        }
+
+        // STAGES RENDERING (14 STAGES - 25 QUESTIONS PER STAGE)
+        function renderStages() {
+            const container = document.getElementById('stages-grid');
+            container.innerHTML = '';
+
+            const stageSize = 25;
+            const totalStages = Math.ceil(quizData.length / stageSize);
+
+            for (let i = 0; i < totalStages; i++) {
+                const startIdx = i * stageSize;
+                const endIdx = Math.min(startIdx + stageSize, quizData.length);
+                const stageQuestions = quizData.slice(startIdx, endIdx);
+
+                let answeredCount = 0;
+                stageQuestions.forEach(q => {
+                    if (state.userAnswers.hasOwnProperty(q.id)) answeredCount++;
+                });
+
+                const percent = Math.round((answeredCount / stageQuestions.length) * 100);
+
+                const card = document.createElement('div');
+                card.className = 'bg-white dark:bg-slate-800 p-5 rounded-2xl shadow-sm border border-slate-200/80 dark:border-slate-700 hover:border-indigo-500 transition cursor-pointer flex flex-col justify-between';
+                card.onclick = () => startStage(i);
+
+                card.innerHTML = `
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">Chặng ${i + 1}</span>
+                            <span class="text-xs text-slate-400 font-medium">${answeredCount}/${stageQuestions.length} câu</span>
+                        </div>
+                        <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1">Chặng ${i + 1} (Câu ${stageQuestions[0].id} - ${stageQuestions[stageQuestions.length - 1].id})</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Luyện tập ${stageQuestions.length} câu trắc nghiệm chuẩn.</p>
+                    </div>
+                    <div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden mb-3">
+                            <div class="bg-indigo-600 h-full rounded-full transition-all duration-300" style="width: ${percent}%"></div>
+                        </div>
+                        <div class="flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
+                            <span>${answeredCount > 0 ? 'Tiếp tục học' : 'Bắt đầu làm'}</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            }
+        }
+
+        // START STAGE OR MARATHON
+        function startStage(stageIdx) {
+            state.isMarathon = false;
+            state.practiceStageIdx = stageIdx;
+            const start = stageIdx * 25;
+            const end = Math.min(start + 25, quizData.length);
+            state.practiceList = quizData.slice(start, end);
+            state.practiceIdx = 0;
+
+            document.getElementById('quiz-stage-title').textContent = `Chặng ${stageIdx + 1}`;
+            switchTab('quiz');
+            renderPracticeQuestion();
+        }
+
+        function startMarathon() {
+            state.isMarathon = true;
+            state.practiceList = [...quizData];
+            state.practiceIdx = 0;
+
+            document.getElementById('quiz-stage-title').textContent = `🔥 Chế độ Marathon`;
+            switchTab('quiz');
+            renderPracticeQuestion();
+        }
+
+        // RENDER PRACTICE QUESTION
+        function renderPracticeQuestion() {
+            const q = state.practiceList[state.practiceIdx];
+            if (!q) return;
+
+            document.getElementById('quiz-progress-text').textContent = `Câu ${state.practiceIdx + 1} / ${state.practiceList.length}`;
+            const percent = Math.round(((state.practiceIdx + 1) / state.practiceList.length) * 100);
+            document.getElementById('quiz-progress-bar').style.width = `${percent}%`;
+
+            document.getElementById('quiz-q-badge').textContent = `Câu ${q.id}`;
+            document.getElementById('quiz-q-text').textContent = `${q.id}. ${q.q.replace(/^Câu \d+:\s*/, '')}`;
+
+            // Score Calculation
+            let currentScore = 0;
+            state.practiceList.forEach(item => {
+                if (state.userAnswers.hasOwnProperty(item.id) && state.userAnswers[item.id] === item.c) {
+                    currentScore += 10;
+                }
+            });
+            document.getElementById('quiz-score').textContent = currentScore;
+
+            // Bookmark Star Button Status
+            const bmBtn = document.getElementById('btn-bookmark-current');
+            if (state.bookmarks.includes(q.id)) {
+                bmBtn.className = 'w-10 h-10 rounded-xl border border-amber-300 bg-amber-50 text-amber-500 transition flex items-center justify-center';
+            } else {
+                bmBtn.className = 'w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-700 text-slate-400 hover:text-amber-500 transition flex items-center justify-center';
+            }
+
+            // Options List
+            const optionsContainer = document.getElementById('quiz-options');
+            optionsContainer.innerHTML = '';
+            
+            const expBox = document.getElementById('quiz-explanation');
+            expBox.classList.add('hidden');
+
+            const isAnswered = state.userAnswers.hasOwnProperty(q.id);
+
+            q.o.forEach((optText, optIdx) => {
+                const btn = document.createElement('button');
+                btn.className = `option-btn w-full p-4 text-left rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/40 text-sm font-semibold text-slate-700 dark:text-slate-200 flex items-center justify-between group`;
+                
+                const letter = String.fromCharCode(65 + optIdx);
+
+                if (isAnswered) {
+                    btn.disabled = true;
+                    const selectedOpt = state.userAnswers[q.id];
+                    if (optIdx === q.c) {
+                        btn.className = `option-btn w-full p-4 text-left rounded-xl border-2 border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-200 font-bold text-sm flex items-center justify-between`;
+                        btn.innerHTML = `<span class="flex items-center gap-3"><span class="w-7 h-7 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-xs font-bold">${letter}</span> <span>${optText}</span></span> <i class="fa-solid fa-circle-check text-emerald-600 text-lg"></i>`;
+                    } else if (optIdx === selectedOpt) {
+                        btn.className = `option-btn w-full p-4 text-left rounded-xl border-2 border-rose-500 bg-rose-50 dark:bg-rose-950/40 text-rose-900 dark:text-rose-200 font-bold text-sm flex items-center justify-between`;
+                        btn.innerHTML = `<span class="flex items-center gap-3"><span class="w-7 h-7 rounded-lg bg-rose-600 text-white flex items-center justify-center text-xs font-bold">${letter}</span> <span>${optText}</span></span> <i class="fa-solid fa-circle-xmark text-rose-600 text-lg"></i>`;
+                    } else {
+                        btn.innerHTML = `<span class="flex items-center gap-3"><span class="w-7 h-7 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 flex items-center justify-center text-xs font-bold">${letter}</span> <span>${optText}</span></span>`;
+                    }
+                } else {
+                    btn.onclick = () => selectPracticeOption(optIdx);
+                    btn.innerHTML = `<span class="flex items-center gap-3"><span class="w-7 h-7 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 flex items-center justify-center text-xs font-bold group-hover:border-indigo-500 group-hover:text-indigo-600">${letter}</span> <span>${optText}</span></span>`;
+                }
+
+                optionsContainer.appendChild(btn);
+            });
+
+            if (isAnswered) {
+                expBox.classList.remove('hidden');
+                document.getElementById('quiz-explanation-text').textContent = `Đáp án đúng là: ${String.fromCharCode(65 + q.c)}. ${q.o[q.c]}`;
+            }
+
+            document.getElementById('btn-prev-q').disabled = (state.practiceIdx === 0);
+        }
+
+        function selectPracticeOption(optIdx) {
+            const q = state.practiceList[state.practiceIdx];
+            state.userAnswers[q.id] = optIdx;
+
+            if (optIdx !== q.c) {
+                if (!state.wrongQuestions.includes(q.id)) {
+                    state.wrongQuestions.push(q.id);
+                }
+            } else {
+                state.wrongQuestions = state.wrongQuestions.filter(id => id !== q.id);
+            }
+
+            saveState();
+            renderPracticeQuestion();
+        }
+
+        function toggleBookmarkCurrent() {
+            const q = state.practiceList[state.practiceIdx];
+            if (!q) return;
+
+            if (state.bookmarks.includes(q.id)) {
+                state.bookmarks = state.bookmarks.filter(id => id !== q.id);
+            } else {
+                state.bookmarks.push(q.id);
+            }
+            saveState();
+            renderPracticeQuestion();
+        }
+
+        function navigatePractice(dir) {
+            const newIdx = state.practiceIdx + dir;
+            if (newIdx >= 0 && newIdx < state.practiceList.length) {
+                state.practiceIdx = newIdx;
+                renderPracticeQuestion();
+            }
+        }
+
+        // EXAM MODE LOGIC
+        function startExam() {
+            const qCount = parseInt(document.getElementById('exam-q-count').value);
+            const timeLimitMin = parseInt(document.getElementById('exam-time-limit').value);
+
+            // Shuffle and slice questions
+            const shuffled = [...quizData].sort(() => 0.5 - Math.random());
+            state.examQuestions = shuffled.slice(0, Math.min(qCount, quizData.length));
+            state.examAnswers = {};
+            state.examCurrentIdx = 0;
+            state.examTimeRemaining = timeLimitMin * 60;
+
+            if (state.examTimer) clearInterval(state.examTimer);
+            state.examTimer = setInterval(updateExamTimer, 1000);
+
+            switchTab('exam-play');
+            renderExamQuestion();
+        }
+
+        function updateExamTimer() {
+            state.examTimeRemaining--;
+            if (state.examTimeRemaining <= 0) {
+                clearInterval(state.examTimer);
+                submitExam();
+                alert('Hết giờ làm bài!');
+                return;
+            }
+            const min = Math.floor(state.examTimeRemaining / 60);
+            const sec = state.examTimeRemaining % 60;
+            document.getElementById('exam-timer').textContent = `${min < 10 ? '0' : ''}${min}:${sec < 10 ? '0' : ''}${sec}`;
+        }
+
+        function renderExamQuestion() {
+            const q = state.examQuestions[state.examCurrentIdx];
+            if (!q) return;
+
+            document.getElementById('exam-progress-counter').textContent = `Câu ${state.examCurrentIdx + 1} / ${state.examQuestions.length}`;
+            document.getElementById('exam-q-badge').textContent = `Câu hệ thống #${q.id}`;
+            document.getElementById('exam-q-text').textContent = `${state.examCurrentIdx + 1}. ${q.q.replace(/^Câu \d+:\s*/, '')}`;
+
+            const container = document.getElementById('exam-options');
+            container.innerHTML = '';
+
+            q.o.forEach((optText, optIdx) => {
+                const btn = document.createElement('button');
+                const isSelected = state.examAnswers[state.examCurrentIdx] === optIdx;
+                
+                let borderStyle = isSelected ? 'border-indigo-600 bg-indigo-50 dark:bg-indigo-950/60 font-bold' : 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/40';
+
+                btn.className = `option-btn w-full p-4 text-left rounded-xl border-2 ${borderStyle} text-sm text-slate-700 dark:text-slate-200 flex items-center justify-between`;
+                btn.onclick = () => {
+                    state.examAnswers[state.examCurrentIdx] = optIdx;
+                    renderExamQuestion();
+                };
+
+                const letter = String.fromCharCode(65 + optIdx);
+                btn.innerHTML = `<span class="flex items-center gap-3"><span class="w-7 h-7 rounded-lg ${isSelected ? 'bg-indigo-600 text-white' : 'bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 text-slate-600'} flex items-center justify-center text-xs font-bold">${letter}</span> <span>${optText}</span></span>`;
+                container.appendChild(btn);
+            });
+        }
+
+        function navigateExam(dir) {
+            const newIdx = state.examCurrentIdx + dir;
+            if (newIdx >= 0 && newIdx < state.examQuestions.length) {
+                state.examCurrentIdx = newIdx;
+                renderExamQuestion();
+            }
+        }
+
+        function openExamGrid() {
+            const container = document.getElementById('exam-grid-container');
+            container.innerHTML = '';
+
+            state.examQuestions.forEach((q, idx) => {
+                const btn = document.createElement('button');
+                const isAnswered = state.examAnswers.hasOwnProperty(idx);
+                const isCurrent = (idx === state.examCurrentIdx);
+
+                let bg = 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300';
+                if (isCurrent) bg = 'bg-indigo-600 text-white ring-2 ring-indigo-400';
+                else if (isAnswered) bg = 'bg-emerald-600 text-white';
+
+                btn.className = `w-10 h-10 rounded-xl text-xs font-bold transition flex items-center justify-center ${bg}`;
+                btn.textContent = idx + 1;
+                btn.onclick = () => {
+                    state.examCurrentIdx = idx;
+                    closeExamGrid();
+                    renderExamQuestion();
+                };
+                container.appendChild(btn);
+            });
+
+            document.getElementById('modal-exam-grid').classList.remove('hidden');
+        }
+
+        function closeExamGrid() {
+            document.getElementById('modal-exam-grid').classList.add('hidden');
+        }
+
+        function confirmSubmitExam() {
+            if (confirm('Bạn có chắc chắn muốn nộp bài thi thử không?')) {
+                submitExam();
+            }
+        }
+
+        function submitExam() {
+            if (state.examTimer) clearInterval(state.examTimer);
+
+            let correctCount = 0;
+            state.examQuestions.forEach((q, idx) => {
+                if (state.examAnswers[idx] === q.c) correctCount++;
+            });
+
+            const percent = Math.round((correctCount / state.examQuestions.length) * 100);
+            document.getElementById('exam-final-score').textContent = `${correctCount}/${state.examQuestions.length}`;
+            document.getElementById('exam-final-percent').textContent = `${percent}%`;
+
+            document.getElementById('modal-exam-result').classList.remove('hidden');
+
+            if (percent >= 80) {
+                confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+            }
+        }
+
+        function closeResultModal() {
+            document.getElementById('modal-exam-result').classList.add('hidden');
+            switchTab('dashboard');
+        }
+
+        // SEARCH & BANK FILTERING
+        function setSearchFilter(filter) {
+            state.activeSearchFilter = filter;
+            ['all', 'wrong', 'bookmark', 'unattempted'].forEach(f => {
+                const btn = document.getElementById(`filter-${f}`);
+                if (btn) {
+                    if (f === filter) btn.className = 'px-3.5 py-2 rounded-xl bg-indigo-600 text-white font-bold';
+                    else btn.className = 'px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 font-semibold';
+                }
+            });
+            filterQuestions();
+        }
+
+        function filterQuestions() {
+            const query = document.getElementById('search-input').value.trim().toLowerCase();
+            const container = document.getElementById('search-results-list');
+            container.innerHTML = '';
+
+            const numQuery = parseInt(query);
+
+            const filtered = quizData.filter(q => {
+                // Filter tag
+                if (state.activeSearchFilter === 'wrong' && !state.wrongQuestions.includes(q.id)) return false;
+                if (state.activeSearchFilter === 'bookmark' && !state.bookmarks.includes(q.id)) return false;
+                if (state.activeSearchFilter === 'unattempted' && state.userAnswers.hasOwnProperty(q.id)) return false;
+
+                // Query text / number
+                if (!query) return true;
+                if (!isNaN(numQuery) && q.id === numQuery) return true;
+                return q.q.toLowerCase().includes(query) || q.o.some(opt => opt.toLowerCase().includes(query));
+            }).slice(0, 40);
+
+            if (filtered.length === 0) {
+                container.innerHTML = `<div class="text-center text-slate-400 py-10 text-sm">Không tìm thấy câu hỏi phù hợp.</div>`;
+                return;
+            }
+
+            filtered.forEach(q => {
+                const card = document.createElement('div');
+                card.className = 'bg-white dark:bg-slate-800 p-5 rounded-2xl shadow-sm border border-slate-200/80 dark:border-slate-700 space-y-3';
+                
+                const isBookmarked = state.bookmarks.includes(q.id);
+                const isWrong = state.wrongQuestions.includes(q.id);
+                const userAns = state.userAnswers[q.id];
+
+                card.innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950 px-2.5 py-1 rounded-lg">Câu ${q.id}</span>
+                        <div class="flex items-center gap-2">
+                            ${isWrong ? '<span class="text-xs bg-rose-100 dark:bg-rose-950 text-rose-600 font-bold px-2 py-0.5 rounded-md">Hay sai ❌</span>' : ''}
+                            ${isBookmarked ? '<span class="text-amber-500">⭐</span>' : ''}
+                        </div>
+                    </div>
+                    <div class="font-bold text-slate-900 dark:text-white text-sm">${q.q}</div>
+                    <div class="text-xs text-emerald-700 dark:text-emerald-400 font-bold"><i class="fa-solid fa-check mr-1"></i> Đáp án đúng: ${String.fromCharCode(65 + q.c)}. ${q.o[q.c]}</div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // INITIALIZE APP
+        window.onload = () => {
+            loadState();
+            renderStages();
+            updateDashboardStats();
+        };
+    </script>
+</body>
+</html>
